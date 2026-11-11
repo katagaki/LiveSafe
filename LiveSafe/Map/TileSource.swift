@@ -17,7 +17,16 @@ struct RemoteTileSource: TileSource {
         return URLSession(configuration: configuration)
     }()
 
+    /// Throws when the network should be treated as unreachable.
+    /// Debug builds launched with `-SimulateOffline YES` always throw, to test offline use.
+    static func checkConnection() throws {
+        #if DEBUG
+        if UserDefaults.standard.bool(forKey: "SimulateOffline") { throw URLError(.notConnectedToInternet) }
+        #endif
+    }
+
     func tile(z: Int, x: Int, y: Int) async throws -> Data? {
+        try Self.checkConnection()
         let string = template
             .replacingOccurrences(of: "{z}", with: String(z))
             .replacingOccurrences(of: "{x}", with: String(x))

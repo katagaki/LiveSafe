@@ -1,7 +1,9 @@
 import SwiftUI
 
-/// Saves the nationwide evacuation site list on the device, and refreshes it.
+/// Saves the nationwide evacuation site list and hazard maps of chosen areas on the device.
 struct OfflineDataView: View {
+    @Bindable var model: MapModel
+
     @State private var info = OfflineSites.shared.info
     @State private var isDownloading = false
     @State private var hasFailed = false
@@ -38,6 +40,7 @@ struct OfflineDataView: View {
                         .foregroundStyle(.red)
                 }
             }
+            AreaPackSection(model: model)
             Section("Notice") {
                 Text("This data is what each municipality registered for the sites and shelters its mayor designated under the Basic Act on Disaster Management. It may be out of date or incomplete, so always check the latest details with the municipality.")
                 Text("Emergency evacuation sites are where you flee to protect your life from immediate danger, and are designated per disaster type. Designated shelters are temporary places to stay until the danger has passed. In a disaster, go to an emergency evacuation site for that disaster, not a designated shelter.")

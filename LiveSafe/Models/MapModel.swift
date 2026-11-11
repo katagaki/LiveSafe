@@ -11,6 +11,14 @@ struct Place: Equatable {
     }
 }
 
+/// An area drawn on the map as a box.
+enum AreaOutline: Equatable {
+    /// The part of the map the sheet leaves visible, following the map as it moves.
+    case visible
+    /// A fixed area, which the map moves to show.
+    case fixed(TileArea)
+}
+
 @Observable
 final class MapModel {
     private static let defaultsKey = "EnabledHazardLayers"
@@ -27,6 +35,9 @@ final class MapModel {
     var place: Place?
     /// Counts taps on the current location button; the map moves to the user each time it changes.
     var locateRequests = 0
+    /// The part of the map the sheet leaves visible, as last reported by the map.
+    var visibleArea: TileArea?
+    var outline: AreaOutline?
 
     var enabledLayers: [HazardLayer] {
         HazardLayer.all.filter { enabledIDs.contains($0.id) }

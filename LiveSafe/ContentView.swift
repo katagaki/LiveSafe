@@ -13,8 +13,8 @@ struct ContentView: View {
         GeometryReader { geometry in
             HazardMapView(
                 layers: model.enabledLayers, shelterKinds: model.enabledShelterKinds,
-                place: model.place, locateRequests: model.locateRequests,
-                bottomInset: bottomInset(in: geometry))
+                place: model.place, locateRequests: model.locateRequests, outline: model.outline,
+                bottomInset: bottomInset(in: geometry)) { model.visibleArea = $0 }
             .ignoresSafeArea()
         }
         .overlay(alignment: .topTrailing) {

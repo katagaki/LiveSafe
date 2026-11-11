@@ -47,7 +47,7 @@ struct SheetView: View {
                             Label("Nearest Evacuation Sites", systemImage: "location.north.circle")
                         }
                         NavigationLink {
-                            OfflineDataView()
+                            OfflineDataView(model: model)
                         } label: {
                             Label("Offline Data", systemImage: "arrow.down.circle")
                         }

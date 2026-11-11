@@ -14,6 +14,26 @@
     "Apple Maps": {
       "shouldTranslate": false
     },
+    "Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エリア"
+          }
+        }
+      }
+    },
+    "Around Current Location": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在地周辺"
+          }
+        }
+      }
+    },
     "Attributions": {
       "localizations": {
         "ja": {
@@ -50,6 +70,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "戻る"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
           }
         }
       }
@@ -130,6 +160,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "土石流（土砂災害警戒区域）"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
           }
         }
       }
@@ -260,6 +300,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "「指定緊急避難場所」は災害の危険から命を守るために緊急的に避難する場所で、災害種別ごとに指定されています。「指定避難所」は災害の危険がなくなるまでの一時的な避難施設です。災害発生時には、指定避難所ではなく、その災害に対応している指定緊急避難場所へ避難してください。"
+          }
+        }
+      }
+    },
+    "Estimate": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "見積もり"
           }
         }
       }
@@ -400,6 +450,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "ハザードマップポータルサイト"
+          }
+        }
+      }
+    },
+    "Hazard Maps": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハザードマップ"
           }
         }
       }
@@ -633,6 +693,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "国土交通省 災害・防災情報"
+          }
+        }
+      }
+    },
+    "Map Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示中のエリア"
           }
         }
       }
@@ -887,12 +957,12 @@
         }
       }
     },
-    "Processed from 「ハザードマップポータルサイト」: darkened in dark mode and enlarged past zoom level 17. Not produced by the government.": {
+    "Processed from 「ハザードマップポータルサイト」: darkened in dark mode, and enlarged past zoom level 17, or past zoom level 15 from saved areas. Not produced by the government.": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "「ハザードマップポータルサイト」を加工して作成（ダークモードでの減光、ズームレベル17を超える拡大）。国が作成したものではありません。"
+            "value": "「ハザードマップポータルサイト」を加工して作成（ダークモードでの減光、ズームレベル17を超える拡大、保存したエリアではズームレベル15を超える拡大）。国が作成したものではありません。"
           }
         }
       }
@@ -953,6 +1023,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "道路"
+          }
+        }
+      }
+    },
+    "Save Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エリアを保存"
+          }
+        }
+      }
+    },
+    "Saved Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存したエリア"
           }
         }
       }
@@ -1033,6 +1123,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "四国"
+          }
+        }
+      }
+    },
+    "Size": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サイズ"
           }
         }
       }
@@ -1137,6 +1237,16 @@
         }
       }
     },
+    "Tiles": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイル数"
+          }
+        }
+      }
+    },
     "Tohoku": {
       "localizations": {
         "ja": {
@@ -1223,6 +1333,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yahoo!天気・災害"
+          }
+        }
+      }
+    },
+    "Zoom in to save a smaller area.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図を拡大して、保存するエリアを小さくしてください。"
           }
         }
       }
