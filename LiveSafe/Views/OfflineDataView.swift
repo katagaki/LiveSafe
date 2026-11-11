@@ -1,8 +1,9 @@
 import SwiftUI
 
-/// Saves the nationwide evacuation site list on the device, and refreshes it.
+/// Saves the nationwide evacuation site and shelter lists on the device, and refreshes them.
 struct OfflineDataView: View {
     @State private var info = OfflineSites.shared.info
+    @State private var shelterInfo = OfflineShelters.shared.info
     @State private var isDownloading = false
     @State private var hasFailed = false
 
@@ -16,16 +17,30 @@ struct OfflineDataView: View {
                         Text("Not Downloaded")
                     }
                 }
-                if let info {
+                LabeledContent("Designated Shelters") {
+                    if let shelterInfo {
+                        Text(shelterInfo.count, format: .number)
+                    } else {
+                        Text("Not Downloaded")
+                    }
+                }
+                LabeledContent("Welfare Shelters") {
+                    if let shelterInfo {
+                        Text(shelterInfo.welfareCount, format: .number)
+                    } else {
+                        Text("Not Downloaded")
+                    }
+                }
+                if let downloadedAt {
                     LabeledContent("Downloaded") {
-                        Text(info.downloadedAt, format: .dateTime.year().month().day().hour().minute())
+                        Text(downloadedAt, format: .dateTime.year().month().day().hour().minute())
                     }
                 }
                 Button {
                     download()
                 } label: {
                     HStack {
-                        Text(info == nil ? "Download" : "Update")
+                        Text(info == nil || shelterInfo == nil ? "Download" : "Update")
                         Spacer()
                         if isDownloading {
                             ProgressView()
@@ -48,15 +63,22 @@ struct OfflineDataView: View {
         .navigationBarTitleDisplayMode(.inline)
     }
 
+    /// The older of the two saved copies' dates.
+    private var downloadedAt: Date? {
+        [info?.downloadedAt, shelterInfo?.downloadedAt].compactMap(\.self).min()
+    }
+
+    /// Fetches both files. One failing leaves the other saved.
     private func download() {
         isDownloading = true
         hasFailed = false
         Task {
-            do {
-                info = try await OfflineSites.shared.download()
-            } catch {
-                hasFailed = true
-            }
+            async let sites = try? OfflineSites.shared.download()
+            async let shelters = try? OfflineShelters.shared.download()
+            let (newInfo, newShelterInfo) = await (sites, shelters)
+            if let newInfo { info = newInfo }
+            if let newShelterInfo { shelterInfo = newShelterInfo }
+            hasFailed = newInfo == nil || newShelterInfo == nil
             isDownloading = false
         }
     }
