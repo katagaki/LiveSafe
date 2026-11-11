@@ -59,7 +59,7 @@ private struct CallLink: View {
                     Text(verbatim: number)
                     Text(name)
                         .font(.subheadline)
-                        .foregroundStyle(.secondary)
+                        .foregroundStyle(Color.secondary)
                 }
             } icon: {
                 Image(systemName: "phone.fill")
