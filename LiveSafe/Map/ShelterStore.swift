@@ -15,7 +15,7 @@ actor ShelterStore {
 
     /// Every shelter of a kind in one tile. An emergency evacuation site appears once,
     /// however many disaster types it is designated for. Without a connection,
-    /// evacuation sites come from the saved copy if there is one.
+    /// shelters come from the saved copy if there is one.
     func shelters(of kind: Shelter.Kind, x: Int, y: Int) async -> [Shelter] {
         let key = Key(kind: kind, x: x, y: y)
         if let cached = cache[key] { return cached }
@@ -26,9 +26,14 @@ actor ShelterStore {
             return await group.reduce(into: [[Shelter]]()) { if let shelters = $1 { $0.append(shelters) } }
         }
         guard !loaded.isEmpty else {
-            guard kind == .evacuationSite else { return [] }
             let bounds = Self.bounds(x: x, y: y)
-            return await OfflineSites.shared.sites(latitudes: bounds.latitudes, longitudes: bounds.longitudes)
+            switch kind {
+            case .evacuationSite:
+                return await OfflineSites.shared.sites(latitudes: bounds.latitudes, longitudes: bounds.longitudes)
+            case .shelter, .welfareShelter:
+                return await OfflineShelters.shared.shelters(
+                    of: kind, latitudes: bounds.latitudes, longitudes: bounds.longitudes)
+            }
         }
         let shelters = Array(Set(loaded.joined()))
         if cache.count > 64 { cache.removeAll() }
@@ -68,6 +73,10 @@ actor ShelterStore {
 
     /// `nil` when the tile could not be reached, as opposed to holding nothing.
     private static func load(_ tileSet: String, kind: Shelter.Kind, x: Int, y: Int) async -> [Shelter]? {
+        #if DEBUG
+        // Lets the saved copy be tested without turning the network off.
+        if ProcessInfo.processInfo.arguments.contains("-SimulateOfflineShelters") { return nil }
+        #endif
         let source: any TileSource = RemoteTileSource(
             template: "https://cyberjapandata.gsi.go.jp/xyz/\(tileSet)/{z}/{x}/{y}.geojson")
         let data: Data?

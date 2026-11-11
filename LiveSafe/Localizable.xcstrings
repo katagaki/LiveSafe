@@ -144,6 +144,16 @@
         }
       }
     },
+    "Designated Shelters": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指定避難所"
+          }
+        }
+      }
+    },
     "Disaster Management Agency": {
       "localizations": {
         "ja": {
@@ -1213,6 +1223,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "福祉避難所（指定避難所）"
+          }
+        }
+      }
+    },
+    "Welfare Shelters": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "福祉避難所"
           }
         }
       }
