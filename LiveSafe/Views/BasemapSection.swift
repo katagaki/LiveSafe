@@ -9,8 +9,25 @@ struct BasemapSection: View {
     private var store: BasemapPackStore { .shared }
     private var downloader: BasemapDownloader { .shared }
 
+    private var byteCount: Int64? {
+        store.packs.isEmpty ? nil : Int64(store.packs.reduce(0) { $0 + $1.byteCount })
+    }
+
     var body: some View {
-        Section("Offline Map") {
+        Section {
+            DataHeader(
+                image: "OfflineMap", title: "Offline Map",
+                source: "Geospatial Information Authority of Japan", byteCount: byteCount,
+                description: "Saves GSI's map of the area on screen, to show under the hazard maps without a connection."
+            ) {
+                if let progress = downloader.progress {
+                    DownloadProgress(
+                        fraction: progress,
+                        label: Text("Downloading… \(progress, format: .percent.precision(.fractionLength(0)))"))
+                } else {
+                    SavedAreasStatus(count: store.packs.count, hasFailed: downloader.hasFailed)
+                }
+            }
             ForEach(store.packs) { pack in
                 LabeledContent(pack.name) {
                     Text(Int64(pack.byteCount), format: .byteCount(style: .file))
@@ -21,8 +38,9 @@ struct BasemapSection: View {
                     store.delete(pack)
                 }
             }
-            if let progress = downloader.progress {
-                ProgressView("Downloading", value: progress)
+        }
+        Section {
+            if downloader.progress != nil {
                 Button("Cancel", role: .cancel) {
                     downloader.cancel()
                 }
@@ -40,10 +58,6 @@ struct BasemapSection: View {
                     }
                 }
                 .disabled(tiles.isTooLarge || Connectivity.shared.isOffline)
-            }
-            if downloader.hasFailed {
-                Text("Download Failed")
-                    .foregroundStyle(.red)
             }
         }
     }

@@ -10,12 +10,15 @@ actor OfflineSites {
 
     static let shared = OfflineSites()
 
-    private static let source = URL(
+    static let source = URL(
         string: "https://hinanmap.gsi.go.jp/hinanjocp/defaultFtpData/csv/mergeFromCity_2.csv")!
     private static let dateKey = "OfflineSitesDownloadedAt"
     private static let countKey = "OfflineSitesCount"
 
     private var cached: [Shelter]?
+
+    /// Size of the saved copy, if there is one.
+    static var savedByteCount: Int64? { GSIFile.size(of: file) }
 
     private static var file: URL {
         URL.applicationSupportDirectory.appending(path: "EvacuationSites.csv")
@@ -28,9 +31,9 @@ actor OfflineSites {
     }
 
     /// Downloads the current file and replaces the saved copy with it.
-    func download() async throws -> Info {
-        let (temporary, response) = try await URLSession.shared.download(from: Self.source)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+    /// `progress` receives the bytes received so far.
+    func download(progress: @escaping @Sendable (Int64) -> Void = { _ in }) async throws -> Info {
+        let temporary = try await GSIFile.download(Self.source, progress: progress)
         let sites = Self.parse(try Data(contentsOf: temporary))
         guard !sites.isEmpty else { throw URLError(.cannotParseResponse) }
         try FileManager.default.createDirectory(
@@ -105,13 +108,16 @@ actor OfflineShelters {
 
     static let shared = OfflineShelters()
 
-    private static let source = URL(
+    static let source = URL(
         string: "https://hinanmap.gsi.go.jp/hinanjocp/defaultFtpData/csv/mergeFromCity_1.csv")!
     private static let dateKey = "OfflineSheltersDownloadedAt"
     private static let countKey = "OfflineSheltersCount"
     private static let welfareCountKey = "OfflineWelfareSheltersCount"
 
     private var cached: [Shelter]?
+
+    /// Size of the saved copy, if there is one.
+    static var savedByteCount: Int64? { GSIFile.size(of: file) }
 
     private static var file: URL {
         URL.applicationSupportDirectory.appending(path: "Shelters.csv")
@@ -127,9 +133,9 @@ actor OfflineShelters {
     }
 
     /// Downloads the current file and replaces the saved copy with it.
-    func download() async throws -> Info {
-        let (temporary, response) = try await URLSession.shared.download(from: Self.source)
-        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+    /// `progress` receives the bytes received so far.
+    func download(progress: @escaping @Sendable (Int64) -> Void = { _ in }) async throws -> Info {
+        let temporary = try await GSIFile.download(Self.source, progress: progress)
         let shelters = Self.parse(try Data(contentsOf: temporary))
         guard !shelters.isEmpty else { throw URLError(.cannotParseResponse) }
         try FileManager.default.createDirectory(
@@ -182,6 +188,58 @@ actor OfflineShelters {
                 latitude: latitude, longitude: longitude, disasters: []))
         }
         return shelters
+    }
+}
+
+/// One of GSI's nationwide CSV files on the server.
+enum GSIFile {
+    struct Remote: Equatable {
+        let byteCount: Int64
+        let modifiedAt: Date?
+    }
+
+    /// The file's size and when it last changed, without downloading it.
+    static func remote(_ url: URL) async throws -> Remote {
+        var request = URLRequest(url: url)
+        request.httpMethod = "HEAD"
+        let (_, response) = try await URLSession.shared.data(for: request)
+        guard let http = response as? HTTPURLResponse, http.statusCode == 200 else {
+            throw URLError(.badServerResponse)
+        }
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(identifier: "GMT")
+        formatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss zzz"
+        return Remote(
+            byteCount: max(0, http.expectedContentLength),
+            modifiedAt: http.value(forHTTPHeaderField: "Last-Modified").flatMap(formatter.date(from:)))
+    }
+
+    /// Downloads the file to a temporary location, reporting the bytes received so far.
+    static func download(_ url: URL, progress: @escaping @Sendable (Int64) -> Void) async throws -> URL {
+        let (temporary, response) = try await URLSession.shared.download(
+            from: url, delegate: ProgressDelegate(progress))
+        guard (response as? HTTPURLResponse)?.statusCode == 200 else { throw URLError(.badServerResponse) }
+        return temporary
+    }
+
+    static func size(of file: URL) -> Int64? {
+        (try? file.resourceValues(forKeys: [.fileSizeKey]).fileSize).map(Int64.init)
+    }
+
+    private final class ProgressDelegate: NSObject, URLSessionTaskDelegate, @unchecked Sendable {
+        private let handler: @Sendable (Int64) -> Void
+        private var observation: NSKeyValueObservation?
+
+        init(_ handler: @escaping @Sendable (Int64) -> Void) {
+            self.handler = handler
+        }
+
+        func urlSession(_ session: URLSession, didCreateTask task: URLSessionTask) {
+            observation = task.observe(\.countOfBytesReceived) { [handler] task, _ in
+                handler(task.countOfBytesReceived)
+            }
+        }
     }
 }
 

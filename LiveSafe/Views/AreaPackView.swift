@@ -10,8 +10,24 @@ struct AreaPackSection: View {
         self.model = model
     }
 
+    private var byteCount: Int64? {
+        library.packs.isEmpty ? nil : Int64(library.packs.reduce(0) { $0 + $1.byteCount })
+    }
+
     var body: some View {
-        Section("Hazard Maps") {
+        Section {
+            DataHeader(
+                image: "HazardMaps", title: "Hazard Maps", source: "Hazard Map Portal", byteCount: byteCount,
+                description: "Saves the hazard maps of an area you choose, so they show without a connection."
+            ) {
+                if let download = library.download {
+                    DownloadProgress(
+                        fraction: download.fraction,
+                        label: Text("Downloading \(download.name)… \(download.fraction, format: .percent.precision(.fractionLength(0)))"))
+                } else {
+                    SavedAreasStatus(count: library.packs.count, hasFailed: library.hasFailed)
+                }
+            }
             ForEach(library.packs) { pack in
                 NavigationLink {
                     AreaPackView(id: pack.id, model: model)
@@ -27,16 +43,16 @@ struct AreaPackSection: View {
                     .disabled(library.download?.packID == pack.id)
                 }
             }
-            if let download = library.download {
-                DownloadRow(download: download)
+        }
+        Section {
+            if library.download != nil {
+                Button("Cancel", role: .cancel) {
+                    library.cancel()
+                }
             } else {
                 NavigationLink("Save Area") {
                     SaveAreaView(model: model)
                 }
-            }
-            if library.hasFailed {
-                Text("Download Failed")
-                    .foregroundStyle(.red)
             }
         }
     }
