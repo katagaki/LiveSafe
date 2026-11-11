@@ -14,7 +14,10 @@ struct ContentView: View {
             HazardMapView(
                 layers: model.enabledLayers, shelterKinds: model.enabledShelterKinds,
                 place: model.place, locateRequests: model.locateRequests, outline: model.outline,
-                bottomInset: bottomInset(in: geometry)) { model.visibleArea = $0 }
+                bottomInset: bottomInset(in: geometry),
+                basemapPacks: Connectivity.shared.isOffline ? BasemapPackStore.shared.packs : [],
+                onVisibleAreaChange: { model.visibleArea = $0 },
+                onRegionChange: { model.visibleRegion = $0 })
             .ignoresSafeArea()
         }
         .overlay(alignment: .topTrailing) {

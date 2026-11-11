@@ -1,4 +1,4 @@
-import CoreLocation
+import MapKit
 import Observation
 
 struct Place: Equatable {
@@ -35,9 +35,11 @@ final class MapModel {
     var place: Place?
     /// Counts taps on the current location button; the map moves to the user each time it changes.
     var locateRequests = 0
-    /// The part of the map the sheet leaves visible, as last reported by the map.
+    /// The part of the map the sheet leaves visible, less a margin, for saving hazard map areas.
     var visibleArea: TileArea?
     var outline: AreaOutline?
+    /// The part of the map not covered by the sheet, which is the area offered for saving the basemap.
+    var visibleRegion: MKCoordinateRegion?
 
     var enabledLayers: [HazardLayer] {
         HazardLayer.all.filter { enabledIDs.contains($0.id) }

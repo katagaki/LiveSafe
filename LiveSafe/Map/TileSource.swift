@@ -17,22 +17,21 @@ struct RemoteTileSource: TileSource {
         return URLSession(configuration: configuration)
     }()
 
-    /// Throws when the network should be treated as unreachable.
+    /// Throws when the network should be treated as unreachable, for work that must not fall back on the cache.
     /// Debug builds launched with `-SimulateOffline YES` always throw, to test offline use.
     static func checkConnection() throws {
-        #if DEBUG
-        if UserDefaults.standard.bool(forKey: "SimulateOffline") { throw URLError(.notConnectedToInternet) }
-        #endif
+        if DebugOptions.simulatesOffline { throw URLError(.notConnectedToInternet) }
     }
 
     func tile(z: Int, x: Int, y: Int) async throws -> Data? {
-        try Self.checkConnection()
         let string = template
             .replacingOccurrences(of: "{z}", with: String(z))
             .replacingOccurrences(of: "{x}", with: String(x))
             .replacingOccurrences(of: "{y}", with: String(y))
         guard let url = URL(string: string) else { return nil }
-        let (data, response) = try await Self.session.data(from: url)
+        var request = URLRequest(url: url)
+        if DebugOptions.simulatesOffline { request.cachePolicy = .returnCacheDataDontLoad }
+        let (data, response) = try await Self.session.data(for: request)
         // The portal answers 404 wherever a layer has no data.
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
         return data

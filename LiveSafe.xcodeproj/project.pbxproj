@@ -15,10 +15,15 @@
 		8BDAF9B87AE16A7B1CAD9928 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87558C6F57BA55658020ED92 /* ContentView.swift */; };
 		8E7E378291FB192AC21ECED2 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEB1FF323E49E3C0219BEB /* Shelter.swift */; };
 		911DB3A531ADB61419CB0E0A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FE428458645CA7E9FE0976E0 /* Localizable.xcstrings */; };
+		9ED4100738823BC76EF75AC9 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8888BEAD10E110801A3E31 /* Connectivity.swift */; };
 		A300F320AF3C7C7DCC9144E0 /* OfflineSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */; };
+		A4C19E7D52B86F03D1E7A9B4 /* OfflineSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */; };
 		A73C8239028B3DBD51B51312 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A59B44AFE50B96E93926F /* LocationProvider.swift */; };
 		B632F3BE88F9511734D48142 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7B5B33CFCEE28E70476F84 /* SheetView.swift */; };
 		B649529B836C7F7936E6C625 /* ShelterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE11111FC0BF14729B64D5 /* ShelterStore.swift */; };
+		6C7E624936C53B7C2A310224 /* BasemapPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A3553AACADFBBA50AE55CD /* BasemapPack.swift */; };
+		ED13F0C5C917DD90169F4700 /* BasemapDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352E72C507AF1098AA0072A /* BasemapDownloader.swift */; };
+		7EE1B9085639F95F2A3A9C85 /* BasemapTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE821EE0D620EC5D88CE20E0 /* BasemapTileOverlay.swift */; };
 		BCE40A68AF1B25E3CDCE196B /* HazardTileOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBFEC851C8E6CDDD23D86875 /* HazardTileOverlay.swift */; };
 		BFA177778177BD68509CA3BB /* HazardLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF54A2B61227CA6062BDFF0 /* HazardLayer.swift */; };
 		C16879F902A0BBA366967907 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96C46456AE5EBABA42B25B3 /* Resource.swift */; };
@@ -27,6 +32,7 @@
 		CA4E20670D54274C72086168 /* LiveSafeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96B1055050434AACC1BCF9B /* LiveSafeApp.swift */; };
 		D179A90B31F5967D86B4A00A /* AddressSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8DCF330F5537C3EA29AB99 /* AddressSearch.swift */; };
 		E6EC2634F2AA5F576765EFD7 /* CompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F4508E9962DEE69D54C7E /* CompassView.swift */; };
+		694076D61C171D56F6C4CC51 /* BasemapSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587DD3982D9BE7E588913F43 /* BasemapSection.swift */; };
 		E9CD3A4DBB8A1E0818207EAA /* OfflineDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA04955FB1E814CA9327B04 /* OfflineDataView.swift */; };
 		E9E75D9515AF31C168381C5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 19550188BDBD8709779E51B6 /* InfoPlist.xcstrings */; };
 		F8FF8B4B650C75053E228B47 /* AttributionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689F85737FB21B5EF4C1C899 /* AttributionsView.swift */; };
@@ -42,6 +48,8 @@
 		19550188BDBD8709779E51B6 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		1E8F4508E9962DEE69D54C7E /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		3AE1DAFA8E7784088AA0EE3E /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		0F8888BEAD10E110801A3E31 /* Connectivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineSearch.swift; sourceTree = "<group>"; };
 		4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineSites.swift; sourceTree = "<group>"; };
 		4F7B5B33CFCEE28E70476F84 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		60EE11111FC0BF14729B64D5 /* ShelterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterStore.swift; sourceTree = "<group>"; };
@@ -56,10 +64,14 @@
 		A5A8AEFDF0604C735EDFB735 /* HazardMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazardMapView.swift; sourceTree = "<group>"; };
 		BDF54A2B61227CA6062BDFF0 /* HazardLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazardLayer.swift; sourceTree = "<group>"; };
 		BE632085303E4568803D8FB0 /* MapModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapModel.swift; sourceTree = "<group>"; };
+		587DD3982D9BE7E588913F43 /* BasemapSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasemapSection.swift; sourceTree = "<group>"; };
 		BEA04955FB1E814CA9327B04 /* OfflineDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineDataView.swift; sourceTree = "<group>"; };
 		D96C46456AE5EBABA42B25B3 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		E96B1055050434AACC1BCF9B /* LiveSafeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveSafeApp.swift; sourceTree = "<group>"; };
 		EB0A59B44AFE50B96E93926F /* LocationProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationProvider.swift; sourceTree = "<group>"; };
+		91A3553AACADFBBA50AE55CD /* BasemapPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasemapPack.swift; sourceTree = "<group>"; };
+		7352E72C507AF1098AA0072A /* BasemapDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasemapDownloader.swift; sourceTree = "<group>"; };
+		EE821EE0D620EC5D88CE20E0 /* BasemapTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasemapTileOverlay.swift; sourceTree = "<group>"; };
 		FBFEC851C8E6CDDD23D86875 /* HazardTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazardTileOverlay.swift; sourceTree = "<group>"; };
 		FE428458645CA7E9FE0976E0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		6B6455B8C2ACC246A5667D72 /* TilePack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePack.swift; sourceTree = "<group>"; };
@@ -85,6 +97,8 @@
 				BDF54A2B61227CA6062BDFF0 /* HazardLayer.swift */,
 				EB0A59B44AFE50B96E93926F /* LocationProvider.swift */,
 				BE632085303E4568803D8FB0 /* MapModel.swift */,
+				0F8888BEAD10E110801A3E31 /* Connectivity.swift */,
+				4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */,
 				4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */,
 				D96C46456AE5EBABA42B25B3 /* Resource.swift */,
 				A3CEB1FF323E49E3C0219BEB /* Shelter.swift */,
@@ -106,6 +120,9 @@
 				12D0AA163275BD56D5540931 /* TilePackDownloader.swift */,
 				6B6455B8C2ACC246A5667D72 /* TilePack.swift */,
 				A5A8AEFDF0604C735EDFB735 /* HazardMapView.swift */,
+				91A3553AACADFBBA50AE55CD /* BasemapPack.swift */,
+				7352E72C507AF1098AA0072A /* BasemapDownloader.swift */,
+				EE821EE0D620EC5D88CE20E0 /* BasemapTileOverlay.swift */,
 				FBFEC851C8E6CDDD23D86875 /* HazardTileOverlay.swift */,
 				60EE11111FC0BF14729B64D5 /* ShelterStore.swift */,
 				05C994436C32722A5E329E2B /* TileSource.swift */,
@@ -120,6 +137,7 @@
 				689F85737FB21B5EF4C1C899 /* AttributionsView.swift */,
 				8FD5B613C0616D9F529C94BA /* BrowserView.swift */,
 				1E8F4508E9962DEE69D54C7E /* CompassView.swift */,
+				587DD3982D9BE7E588913F43 /* BasemapSection.swift */,
 				BEA04955FB1E814CA9327B04 /* OfflineDataView.swift */,
 				3AE1DAFA8E7784088AA0EE3E /* ResourcesView.swift */,
 				4F7B5B33CFCEE28E70476F84 /* SheetView.swift */,
@@ -226,11 +244,17 @@
 				8BDAF9B87AE16A7B1CAD9928 /* ContentView.swift in Sources */,
 				BFA177778177BD68509CA3BB /* HazardLayer.swift in Sources */,
 				C305ED8DE328DF0A8109E5CB /* HazardMapView.swift in Sources */,
+				6C7E624936C53B7C2A310224 /* BasemapPack.swift in Sources */,
+				ED13F0C5C917DD90169F4700 /* BasemapDownloader.swift in Sources */,
+				7EE1B9085639F95F2A3A9C85 /* BasemapTileOverlay.swift in Sources */,
 				BCE40A68AF1B25E3CDCE196B /* HazardTileOverlay.swift in Sources */,
 				CA4E20670D54274C72086168 /* LiveSafeApp.swift in Sources */,
 				A73C8239028B3DBD51B51312 /* LocationProvider.swift in Sources */,
 				C565B026E512231574E89A62 /* MapModel.swift in Sources */,
+				694076D61C171D56F6C4CC51 /* BasemapSection.swift in Sources */,
 				E9CD3A4DBB8A1E0818207EAA /* OfflineDataView.swift in Sources */,
+				9ED4100738823BC76EF75AC9 /* Connectivity.swift in Sources */,
+				A4C19E7D52B86F03D1E7A9B4 /* OfflineSearch.swift in Sources */,
 				A300F320AF3C7C7DCC9144E0 /* OfflineSites.swift in Sources */,
 				C16879F902A0BBA366967907 /* Resource.swift in Sources */,
 				28172FDEC9E78E7D510D0F68 /* ResourcesView.swift in Sources */,
