@@ -967,6 +967,16 @@
         }
       }
     },
+    "Saved Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存済みデータ"
+          }
+        }
+      }
+    },
     "Search Address": {
       "localizations": {
         "ja": {

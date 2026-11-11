@@ -16,6 +16,7 @@
 		8E7E378291FB192AC21ECED2 /* Shelter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CEB1FF323E49E3C0219BEB /* Shelter.swift */; };
 		911DB3A531ADB61419CB0E0A /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FE428458645CA7E9FE0976E0 /* Localizable.xcstrings */; };
 		A300F320AF3C7C7DCC9144E0 /* OfflineSites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */; };
+		A4C19E7D52B86F03D1E7A9B4 /* OfflineSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */; };
 		A73C8239028B3DBD51B51312 /* LocationProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB0A59B44AFE50B96E93926F /* LocationProvider.swift */; };
 		B632F3BE88F9511734D48142 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F7B5B33CFCEE28E70476F84 /* SheetView.swift */; };
 		B649529B836C7F7936E6C625 /* ShelterStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EE11111FC0BF14729B64D5 /* ShelterStore.swift */; };
@@ -38,6 +39,7 @@
 		19550188BDBD8709779E51B6 /* InfoPlist.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = InfoPlist.xcstrings; sourceTree = "<group>"; };
 		1E8F4508E9962DEE69D54C7E /* CompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassView.swift; sourceTree = "<group>"; };
 		3AE1DAFA8E7784088AA0EE3E /* ResourcesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesView.swift; sourceTree = "<group>"; };
+		4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineSearch.swift; sourceTree = "<group>"; };
 		4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineSites.swift; sourceTree = "<group>"; };
 		4F7B5B33CFCEE28E70476F84 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		60EE11111FC0BF14729B64D5 /* ShelterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterStore.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				BDF54A2B61227CA6062BDFF0 /* HazardLayer.swift */,
 				EB0A59B44AFE50B96E93926F /* LocationProvider.swift */,
 				BE632085303E4568803D8FB0 /* MapModel.swift */,
+				4D0B7A91E3F2C6584A1D9E07 /* OfflineSearch.swift */,
 				4E6530B893CD2F3B5CC83260 /* OfflineSites.swift */,
 				D96C46456AE5EBABA42B25B3 /* Resource.swift */,
 				A3CEB1FF323E49E3C0219BEB /* Shelter.swift */,
@@ -215,6 +218,7 @@
 				A73C8239028B3DBD51B51312 /* LocationProvider.swift in Sources */,
 				C565B026E512231574E89A62 /* MapModel.swift in Sources */,
 				E9CD3A4DBB8A1E0818207EAA /* OfflineDataView.swift in Sources */,
+				A4C19E7D52B86F03D1E7A9B4 /* OfflineSearch.swift in Sources */,
 				A300F320AF3C7C7DCC9144E0 /* OfflineSites.swift in Sources */,
 				C16879F902A0BBA366967907 /* Resource.swift in Sources */,
 				28172FDEC9E78E7D510D0F68 /* ResourcesView.swift in Sources */,
