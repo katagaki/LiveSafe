@@ -44,6 +44,11 @@ struct AttributionsView: View {
                 Link("GSI Tile List", destination: Self.tileList)
                 Link("Terms of Use (GSI)", destination: Self.gsiTerms)
             }
+            Section("Offline Map") {
+                Link("出典：国土地理院（地理院タイル）", destination: Self.tileList)
+                Text("Processed from 「淡色地図」（国土地理院）: saved on the device, darkened in dark mode and enlarged past zoom level 15. Not produced by the Geospatial Information Authority of Japan.")
+                Link("Terms of Use (GSI)", destination: Self.gsiTerms)
+            }
             Section("Map and Search") {
                 Link("Apple Maps", destination: Self.appleMaps)
             }

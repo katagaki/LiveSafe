@@ -2,6 +2,7 @@ import MapKit
 import SwiftUI
 
 /// Apple Maps basemap with hazard tile overlays drawn beneath its labels.
+/// Without a connection, saved 淡色地図 tiles are drawn over Apple's map wherever an area was saved.
 struct HazardMapView: UIViewRepresentable {
     var layers: [HazardLayer]
     var shelterKinds: Set<Shelter.Kind>
@@ -9,6 +10,10 @@ struct HazardMapView: UIViewRepresentable {
     var locateRequests: Int
     /// Height at the bottom of the map covered by the sheet.
     var bottomInset: CGFloat
+    /// Saved basemap areas to fall back on. Empty while there is a connection.
+    var basemapPacks: [BasemapPack]
+    /// Called with the region left uncovered by the sheet whenever it changes.
+    var onRegionChange: (MKCoordinateRegion) -> Void
 
     @Environment(\.colorScheme) private var colorScheme
 
@@ -19,6 +24,11 @@ struct HazardMapView: UIViewRepresentable {
         mapView.delegate = context.coordinator
         mapView.preservesSuperviewLayoutMargins = false
         mapView.isPitchEnabled = false
+        #if DEBUG
+        if DebugOptions.hidesAppleBasemap {
+            mapView.insertOverlay(BlankTileOverlay(), at: 0, level: .aboveRoads)
+        }
+        #endif
         mapView.region = MKCoordinateRegion(
             center: CLLocationCoordinate2D(latitude: 35.681, longitude: 139.767),
             span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
@@ -26,10 +36,17 @@ struct HazardMapView: UIViewRepresentable {
     }
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
+        let coordinator = context.coordinator
+        coordinator.onRegionChange = onRegionChange
         if mapView.layoutMargins.bottom != bottomInset {
             mapView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+            // Reported after this update, because it changes the model.
+            DispatchQueue.main.async { coordinator.reportRegion(of: mapView) }
         }
-        updateOverlays(on: mapView)
+        coordinator.layers = layers
+        coordinator.isDark = colorScheme == .dark
+        coordinator.basemapPacks = basemapPacks
+        coordinator.updateOverlays(on: mapView)
         updatePlace(on: mapView, coordinator: context.coordinator)
         if context.coordinator.locateRequests != locateRequests {
             context.coordinator.locateRequests = locateRequests
@@ -38,22 +55,6 @@ struct HazardMapView: UIViewRepresentable {
         if context.coordinator.shelterKinds != shelterKinds {
             context.coordinator.shelterKinds = shelterKinds
             context.coordinator.refreshShelters(on: mapView)
-        }
-    }
-
-    private func updateOverlays(on mapView: MKMapView) {
-        let isDark = colorScheme == .dark
-        var current = mapView.overlays.compactMap { $0 as? HazardTileOverlay }
-        let stale = current.filter { overlay in
-            overlay.isDarkened != isDark || !layers.contains { $0.id == overlay.layerID }
-        }
-        mapView.removeOverlays(stale)
-        current.removeAll { overlay in stale.contains { $0 === overlay } }
-        for (index, layer) in layers.enumerated()
-        where !(index < current.count && current[index].layerID == layer.id) {
-            let overlay = HazardTileOverlay(layer: layer, isDarkened: isDark)
-            mapView.insertOverlay(overlay, at: index, level: .aboveRoads)
-            current.insert(overlay, at: index)
         }
     }
 
@@ -85,6 +86,12 @@ struct HazardMapView: UIViewRepresentable {
         var placePin: MKPointAnnotation?
         var shelterKinds: Set<Shelter.Kind> = []
         var locateRequests = 0
+        var layers: [HazardLayer] = []
+        var isDark = false
+        var basemapPacks: [BasemapPack] = []
+        var onRegionChange: (MKCoordinateRegion) -> Void = { _ in }
+        /// Where hazard overlays currently sit: beneath Apple's labels, or above the fallback basemap that covers them.
+        private var hazardLevel = MKOverlayLevel.aboveRoads
         private let locationManager = CLLocationManager()
         private let store = ShelterStore.shared
         private var shelterTask: Task<Void, Never>?
@@ -95,8 +102,52 @@ struct HazardMapView: UIViewRepresentable {
                 return MKOverlayRenderer(overlay: overlay)
             }
             let renderer = MKTileOverlayRenderer(tileOverlay: tileOverlay)
-            renderer.alpha = 0.7
+            if tileOverlay is HazardTileOverlay {
+                renderer.alpha = 0.7
+                // Over the fallback basemap, multiplying keeps the labels drawn into its tiles dark.
+                if hazardLevel == .aboveLabels { renderer.blendMode = .multiply }
+            }
             return renderer
+        }
+
+        /// Matches the overlays to the enabled layers, with the saved basemap beneath them where it is needed.
+        ///
+        /// The saved tiles carry their own labels, so they are drawn above Apple's labels to cover them,
+        /// and the hazard overlays move up with them. Two sets of labels would otherwise overlap wherever
+        /// Apple's map is still cached.
+        func updateOverlays(on mapView: MKMapView) {
+            let visible = mapView.visibleMapRect
+            let packs = basemapPacks.contains { $0.mapRect.intersects(visible) } ? basemapPacks : []
+            let level = packs.isEmpty ? MKOverlayLevel.aboveRoads : .aboveLabels
+            let basemap = mapView.overlays.lazy.compactMap { $0 as? BasemapTileOverlay }.first
+            if let basemap, basemap.packs != packs || basemap.isDarkened != isDark {
+                mapView.removeOverlay(basemap)
+            }
+            if !packs.isEmpty, !mapView.overlays.contains(where: { $0 is BasemapTileOverlay }) {
+                mapView.insertOverlay(BasemapTileOverlay(packs: packs, isDarkened: isDark), at: 0, level: level)
+            }
+
+            var current = mapView.overlays.compactMap { $0 as? HazardTileOverlay }
+            let stale = current.filter { overlay in
+                level != hazardLevel || overlay.isDarkened != isDark || !layers.contains { $0.id == overlay.layerID }
+            }
+            hazardLevel = level
+            mapView.removeOverlays(stale)
+            current.removeAll { overlay in stale.contains { $0 === overlay } }
+            // Whatever else sits at the bottom of this level stays below the hazard overlays.
+            let offset = mapView.overlays(in: level).count { !($0 is HazardTileOverlay) }
+            for (index, layer) in layers.enumerated()
+            where !(index < current.count && current[index].layerID == layer.id) {
+                let overlay = HazardTileOverlay(layer: layer, isDarkened: isDark)
+                mapView.insertOverlay(overlay, at: index + offset, level: level)
+                current.insert(overlay, at: index)
+            }
+        }
+
+        func reportRegion(of mapView: MKMapView) {
+            let uncovered = mapView.bounds.inset(by: mapView.layoutMargins)
+            guard !uncovered.isEmpty else { return }
+            onRegionChange(mapView.convert(uncovered, toRegionFrom: mapView))
         }
 
         /// Shows the user's position and moves the map to it, asking for permission the first time.
@@ -107,6 +158,8 @@ struct HazardMapView: UIViewRepresentable {
         }
 
         func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+            updateOverlays(on: mapView)
+            reportRegion(of: mapView)
             refreshShelters(on: mapView)
         }
 
@@ -186,6 +239,20 @@ struct HazardMapView: UIViewRepresentable {
         }
     }
 }
+
+#if DEBUG
+/// Stands in for Apple's map having nothing to draw, for testing without a connection.
+private final class BlankTileOverlay: MKTileOverlay {
+    init() {
+        super.init(urlTemplate: nil)
+        canReplaceMapContent = true
+    }
+
+    override func loadTile(at path: MKTileOverlayPath, result: @escaping (Data?, Error?) -> Void) {
+        result(TileImage.empty, nil)
+    }
+}
+#endif
 
 /// The glass card shown above a selected shelter pin.
 struct ShelterCallout: View {
