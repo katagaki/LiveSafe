@@ -23,7 +23,9 @@ struct RemoteTileSource: TileSource {
             .replacingOccurrences(of: "{x}", with: String(x))
             .replacingOccurrences(of: "{y}", with: String(y))
         guard let url = URL(string: string) else { return nil }
-        let (data, response) = try await Self.session.data(from: url)
+        var request = URLRequest(url: url)
+        if DebugOptions.simulatesOffline { request.cachePolicy = .returnCacheDataDontLoad }
+        let (data, response) = try await Self.session.data(for: request)
         // The portal answers 404 wherever a layer has no data.
         guard (response as? HTTPURLResponse)?.statusCode == 200 else { return nil }
         return data

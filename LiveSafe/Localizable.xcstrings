@@ -31,6 +31,16 @@
         }
       }
     },
+    "About %@": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "約%@"
+          }
+        }
+      }
+    },
     "After the last message, press 3 to add your own.": {
       "localizations": {
         "ja": {
@@ -63,6 +73,16 @@
     },
     "Apple Maps": {
       "shouldTranslate": false
+    },
+    "Area Too Large": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "範囲が広すぎます"
+          }
+        }
+      }
     },
     "At Alert Level 3, older people and others who need time leave dangerous places. At Alert Level 4, everyone does.": {
       "localizations": {
@@ -140,6 +160,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "NTT東日本・NTT西日本の電話からの通話料は無料です。ほかの通信事業者からの通話料は事業者ごとに異なります。"
+          }
+        }
+      }
+    },
+    "Cancel": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "キャンセル"
           }
         }
       }
@@ -235,6 +265,16 @@
       }
     },
     "Designated Shelter": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指定避難所"
+          }
+        }
+      }
+    },
+    "Designated Shelters": {
       "localizations": {
         "ja": {
           "stringUnit": {
@@ -380,6 +420,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@にダウンロード"
+          }
+        }
+      }
+    },
+    "Downloading": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロード中"
           }
         }
       }
@@ -937,6 +987,16 @@
         }
       }
     },
+    "Map Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図の範囲"
+          }
+        }
+      }
+    },
     "Map and Search": {
       "localizations": {
         "ja": {
@@ -1177,6 +1237,16 @@
         }
       }
     },
+    "Offline Map": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフライン地図"
+          }
+        }
+      }
+    },
     "Okinawa": {
       "localizations": {
         "ja": {
@@ -1327,6 +1397,16 @@
         }
       }
     },
+    "Processed from 「淡色地図」（国土地理院）: saved on the device, darkened in dark mode and enlarged past zoom level 15. Not produced by the Geospatial Information Authority of Japan.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「淡色地図」（国土地理院）を加工して作成（端末への保存、ダークモードでの減光、ズームレベル15を超える拡大）。国土地理院が作成したものではありません。"
+          }
+        }
+      }
+    },
     "Protect your head, move away from large furniture and get under a sturdy table.": {
       "localizations": {
         "ja": {
@@ -1393,6 +1473,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "道路"
+          }
+        }
+      }
+    },
+    "Save Area on Map": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示中の範囲を保存"
+          }
+        }
+      }
+    },
+    "Saved Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存済みデータ"
           }
         }
       }
@@ -1737,6 +1837,16 @@
         }
       }
     },
+    "Welfare Shelters": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "福祉避難所"
+          }
+        }
+      }
+    },
     "What to Do in a Disaster": {
       "localizations": {
         "ja": {
@@ -1781,6 +1891,9 @@
       "shouldTranslate": false
     },
     "出典：国土地理院ウェブサイト": {
+      "shouldTranslate": false
+    },
+    "出典：国土地理院（地理院タイル）": {
       "shouldTranslate": false
     }
   },
