@@ -74,12 +74,32 @@
     "Apple Maps": {
       "shouldTranslate": false
     },
+    "Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エリア"
+          }
+        }
+      }
+    },
     "Area Too Large": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "範囲が広すぎます"
+          }
+        }
+      }
+    },
+    "Around Current Location": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在地周辺"
           }
         }
       }
@@ -260,6 +280,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "土石流（土砂災害警戒区域）"
+          }
+        }
+      }
+    },
+    "Delete": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "削除"
           }
         }
       }
@@ -494,6 +524,16 @@
         }
       }
     },
+    "Estimate": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "見積もり"
+          }
+        }
+      }
+    },
     "Evacuation Sites": {
       "localizations": {
         "ja": {
@@ -640,6 +680,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "ハザードマップポータルサイト"
+          }
+        }
+      }
+    },
+    "Hazard Maps": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハザードマップ"
           }
         }
       }
@@ -1377,12 +1427,12 @@
         }
       }
     },
-    "Processed from 「ハザードマップポータルサイト」: darkened in dark mode and enlarged past zoom level 17. Not produced by the government.": {
+    "Processed from 「ハザードマップポータルサイト」: darkened in dark mode, and enlarged past zoom level 17, or past zoom level 15 from saved areas. Not produced by the government.": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "「ハザードマップポータルサイト」を加工して作成（ダークモードでの減光、ズームレベル17を超える拡大）。国が作成したものではありません。"
+            "value": "「ハザードマップポータルサイト」を加工して作成（ダークモードでの減光、ズームレベル17を超える拡大、保存したエリアではズームレベル15を超える拡大）。国が作成したものではありません。"
           }
         }
       }
@@ -1477,12 +1527,32 @@
         }
       }
     },
+    "Save Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エリアを保存"
+          }
+        }
+      }
+    },
     "Save Area on Map": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "表示中の範囲を保存"
+          }
+        }
+      }
+    },
+    "Saved Area": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "保存したエリア"
           }
         }
       }
@@ -1583,6 +1653,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "四国"
+          }
+        }
+      }
+    },
+    "Size": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "サイズ"
           }
         }
       }
@@ -1713,6 +1793,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "本データは、災害対策基本法第49条の4・第49条の7に基づき市町村長が指定した指定緊急避難場所・指定避難所の情報を各市町村に登録いただいたものです。なお、最新でない場合や未掲載の場合があるため、最新かつ詳細の状況などは必ず当該市町村にご確認ください。"
+          }
+        }
+      }
+    },
+    "Tiles": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "タイル数"
           }
         }
       }
@@ -1873,6 +1963,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "Yahoo!天気・災害"
+          }
+        }
+      }
+    },
+    "Zoom in to save a smaller area.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図を拡大して、保存するエリアを小さくしてください。"
           }
         }
       }

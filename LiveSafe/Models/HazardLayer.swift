@@ -22,8 +22,14 @@ struct HazardLayer: Identifiable {
     /// Zoom levels the portal serves tiles for.
     let zoomRange: ClosedRange<Int>
 
+    var tileSet: TileSet {
+        TileSet(id: id, template: "https://disaportaldata.gsi.go.jp/raster/\(id)/{z}/{x}/{y}.png",
+                minimumZ: zoomRange.lowerBound, maximumZ: zoomRange.upperBound)
+    }
+
+    /// Saved packs where they cover a tile, the portal elsewhere.
     var source: any TileSource {
-        RemoteTileSource(template: "https://disaportaldata.gsi.go.jp/raster/\(id)/{z}/{x}/{y}.png")
+        TilePackStore.shared.source(for: id, remote: RemoteTileSource(template: tileSet.template))
     }
 
     /// The name without its bracketed qualifier.

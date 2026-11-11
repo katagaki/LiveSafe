@@ -1,6 +1,7 @@
 import SwiftUI
 
-/// Saves the nationwide evacuation site and shelter lists and areas of the basemap on the device, and refreshes them.
+/// Saves the nationwide evacuation site and shelter lists, hazard maps of chosen areas,
+/// and areas of the basemap on the device, and refreshes them.
 struct OfflineDataView: View {
     var model: MapModel
 
@@ -55,6 +56,7 @@ struct OfflineDataView: View {
                         .foregroundStyle(.red)
                 }
             }
+            AreaPackSection(model: model)
             BasemapSection(region: model.visibleRegion)
             Section("Notice") {
                 Text("This data is what each municipality registered for the sites and shelters its mayor designated under the Basic Act on Disaster Management. It may be out of date or incomplete, so always check the latest details with the municipality.")

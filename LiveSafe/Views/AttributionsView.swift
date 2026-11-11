@@ -16,7 +16,7 @@ struct AttributionsView: View {
         List {
             Section("Hazard Data") {
                 Link("出典：「ハザードマップポータルサイト」", destination: Self.portal)
-                Text("Processed from 「ハザードマップポータルサイト」: darkened in dark mode and enlarged past zoom level 17. Not produced by the government.")
+                Text("Processed from 「ハザードマップポータルサイト」: darkened in dark mode, and enlarged past zoom level 17, or past zoom level 15 from saved areas. Not produced by the government.")
                 Link("Open Data", destination: Self.openData)
                 Link("Terms of Use (PDL1.0)", destination: Self.portalTerms)
             }

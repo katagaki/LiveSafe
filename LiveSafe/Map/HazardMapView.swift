@@ -8,10 +8,13 @@ struct HazardMapView: UIViewRepresentable {
     var shelterKinds: Set<Shelter.Kind>
     var place: Place?
     var locateRequests: Int
+    var outline: AreaOutline?
     /// Height at the bottom of the map covered by the sheet.
     var bottomInset: CGFloat
     /// Saved basemap areas to fall back on. Empty while there is a connection.
     var basemapPacks: [BasemapPack]
+    /// Called with the part of the map the sheet leaves visible, less a margin, whenever it changes.
+    var onVisibleAreaChange: (TileArea) -> Void
     /// Called with the region left uncovered by the sheet whenever it changes.
     var onRegionChange: (MKCoordinateRegion) -> Void
 
@@ -37,11 +40,17 @@ struct HazardMapView: UIViewRepresentable {
 
     func updateUIView(_ mapView: MKMapView, context: Context) {
         let coordinator = context.coordinator
+        coordinator.onVisibleAreaChange = onVisibleAreaChange
         coordinator.onRegionChange = onRegionChange
         if mapView.layoutMargins.bottom != bottomInset {
             mapView.layoutMargins = UIEdgeInsets(top: 0, left: 0, bottom: bottomInset, right: 0)
+            coordinator.visibleAreaChanged(on: mapView)
             // Reported after this update, because it changes the model.
             DispatchQueue.main.async { coordinator.reportRegion(of: mapView) }
+        }
+        if coordinator.outline != outline {
+            coordinator.outline = outline
+            coordinator.updateOutline(on: mapView, fits: true)
         }
         coordinator.layers = layers
         coordinator.isDark = colorScheme == .dark
@@ -82,14 +91,20 @@ struct HazardMapView: UIViewRepresentable {
         /// Clears the balloon a marker grows into when selected.
         private static let calloutGap: CGFloat = 40
 
+        /// Space kept between an area outline and the edges of the visible map.
+        private static let outlinePadding: CGFloat = 16
+
         var place: Place?
         var placePin: MKPointAnnotation?
         var shelterKinds: Set<Shelter.Kind> = []
         var locateRequests = 0
+        var outline: AreaOutline?
         var layers: [HazardLayer] = []
         var isDark = false
         var basemapPacks: [BasemapPack] = []
+        var onVisibleAreaChange: (TileArea) -> Void = { _ in }
         var onRegionChange: (MKCoordinateRegion) -> Void = { _ in }
+        private var outlinePolygon: MKPolygon?
         /// Where hazard overlays currently sit: beneath Apple's labels, or above the fallback basemap that covers them.
         private var hazardLevel = MKOverlayLevel.aboveRoads
         private let locationManager = CLLocationManager()
@@ -98,6 +113,13 @@ struct HazardMapView: UIViewRepresentable {
         private var callout: UIHostingController<ShelterCallout>?
 
         func mapView(_ mapView: MKMapView, rendererFor overlay: any MKOverlay) -> MKOverlayRenderer {
+            if let polygon = overlay as? MKPolygon {
+                let renderer = MKPolygonRenderer(polygon: polygon)
+                renderer.strokeColor = .tintColor
+                renderer.fillColor = .tintColor.withAlphaComponent(0.1)
+                renderer.lineWidth = 2
+                return renderer
+            }
             guard let tileOverlay = overlay as? MKTileOverlay else {
                 return MKOverlayRenderer(overlay: overlay)
             }
@@ -135,7 +157,8 @@ struct HazardMapView: UIViewRepresentable {
             mapView.removeOverlays(stale)
             current.removeAll { overlay in stale.contains { $0 === overlay } }
             // Whatever else sits at the bottom of this level stays below the hazard overlays.
-            let offset = mapView.overlays(in: level).count { !($0 is HazardTileOverlay) }
+            // The area outline is drawn on top of them, so it is not counted.
+            let offset = mapView.overlays(in: level).count { !($0 is HazardTileOverlay) && $0 !== outlinePolygon }
             for (index, layer) in layers.enumerated()
             where !(index < current.count && current[index].layerID == layer.id) {
                 let overlay = HazardTileOverlay(layer: layer, isDarkened: isDark)
@@ -161,6 +184,60 @@ struct HazardMapView: UIViewRepresentable {
             updateOverlays(on: mapView)
             reportRegion(of: mapView)
             refreshShelters(on: mapView)
+            visibleAreaChanged(on: mapView)
+        }
+
+        /// Reports the visible area, and redraws the outline if it follows that area.
+        func visibleAreaChanged(on mapView: MKMapView) {
+            if outline == .visible { updateOutline(on: mapView, fits: false) }
+            guard let area = visibleArea(of: mapView) else { return }
+            // This can run during a view update, when the model cannot be changed.
+            DispatchQueue.main.async { [onVisibleAreaChange] in
+                onVisibleAreaChange(area)
+            }
+        }
+
+        /// Draws the outline, moving the map to show a fixed one if `fits` is set.
+        func updateOutline(on mapView: MKMapView, fits: Bool) {
+            if let outlinePolygon { mapView.removeOverlay(outlinePolygon) }
+            outlinePolygon = nil
+            let area: TileArea? = switch outline {
+            case .visible: visibleArea(of: mapView)
+            case .fixed(let area): area
+            case nil: nil
+            }
+            guard let area else { return }
+            let corners = [
+                CLLocationCoordinate2D(latitude: area.north, longitude: area.west),
+                CLLocationCoordinate2D(latitude: area.north, longitude: area.east),
+                CLLocationCoordinate2D(latitude: area.south, longitude: area.east),
+                CLLocationCoordinate2D(latitude: area.south, longitude: area.west)
+            ]
+            let polygon = MKPolygon(coordinates: corners, count: corners.count)
+            outlinePolygon = polygon
+            mapView.addOverlay(polygon, level: .aboveLabels)
+            if fits, outline != .visible {
+                let padding = Self.outlinePadding
+                mapView.setVisibleMapRect(
+                    polygon.boundingMapRect,
+                    edgePadding: UIEdgeInsets(top: mapView.safeAreaInsets.top + padding, left: padding,
+                                              bottom: padding, right: padding),
+                    animated: true)
+            }
+        }
+
+        /// The part of the map inside the safe area and above the sheet, less a margin.
+        private func visibleArea(of mapView: MKMapView) -> TileArea? {
+            let padding = Self.outlinePadding
+            let rect = mapView.bounds.inset(by: UIEdgeInsets(
+                top: mapView.safeAreaInsets.top + padding, left: padding,
+                bottom: max(mapView.layoutMargins.bottom, mapView.safeAreaInsets.bottom) + padding, right: padding))
+            guard rect.width > 0, rect.height > 0 else { return nil }
+            let region = mapView.convert(rect, toRegionFrom: mapView)
+            return TileArea(south: region.center.latitude - region.span.latitudeDelta / 2,
+                            west: region.center.longitude - region.span.longitudeDelta / 2,
+                            north: region.center.latitude + region.span.latitudeDelta / 2,
+                            east: region.center.longitude + region.span.longitudeDelta / 2)
         }
 
         func mapView(_ mapView: MKMapView, viewFor annotation: any MKAnnotation) -> MKAnnotationView? {

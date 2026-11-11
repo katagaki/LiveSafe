@@ -36,6 +36,10 @@
 		E9CD3A4DBB8A1E0818207EAA /* OfflineDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA04955FB1E814CA9327B04 /* OfflineDataView.swift */; };
 		E9E75D9515AF31C168381C5F /* InfoPlist.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 19550188BDBD8709779E51B6 /* InfoPlist.xcstrings */; };
 		F8FF8B4B650C75053E228B47 /* AttributionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689F85737FB21B5EF4C1C899 /* AttributionsView.swift */; };
+		DDE76290B0F31EC3C176F6D8 /* TilePack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6455B8C2ACC246A5667D72 /* TilePack.swift */; };
+		AC49B3CF414CD0C2941DD28F /* TilePackDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D0AA163275BD56D5540931 /* TilePackDownloader.swift */; };
+		F1443C2985143FBFDCE1AF64 /* TilePackLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB4FD910ABC12775F91B7F9 /* TilePackLibrary.swift */; };
+		96D9B8DA0277CFC6F3056A7C /* AreaPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45960FE8E1DFF8B0A4B73A /* AreaPackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,10 @@
 		EE821EE0D620EC5D88CE20E0 /* BasemapTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasemapTileOverlay.swift; sourceTree = "<group>"; };
 		FBFEC851C8E6CDDD23D86875 /* HazardTileOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HazardTileOverlay.swift; sourceTree = "<group>"; };
 		FE428458645CA7E9FE0976E0 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		6B6455B8C2ACC246A5667D72 /* TilePack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePack.swift; sourceTree = "<group>"; };
+		12D0AA163275BD56D5540931 /* TilePackDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePackDownloader.swift; sourceTree = "<group>"; };
+		CEB4FD910ABC12775F91B7F9 /* TilePackLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePackLibrary.swift; sourceTree = "<group>"; };
+		7D45960FE8E1DFF8B0A4B73A /* AreaPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPackView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -84,6 +92,7 @@
 		1269C80B1B043CE07A23A160 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CEB4FD910ABC12775F91B7F9 /* TilePackLibrary.swift */,
 				9C8DCF330F5537C3EA29AB99 /* AddressSearch.swift */,
 				BDF54A2B61227CA6062BDFF0 /* HazardLayer.swift */,
 				EB0A59B44AFE50B96E93926F /* LocationProvider.swift */,
@@ -108,6 +117,8 @@
 		1E8633450AC2B5BE4C94466E /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				12D0AA163275BD56D5540931 /* TilePackDownloader.swift */,
+				6B6455B8C2ACC246A5667D72 /* TilePack.swift */,
 				A5A8AEFDF0604C735EDFB735 /* HazardMapView.swift */,
 				91A3553AACADFBBA50AE55CD /* BasemapPack.swift */,
 				7352E72C507AF1098AA0072A /* BasemapDownloader.swift */,
@@ -122,6 +133,7 @@
 		9A22F738BABD9996AE6CA4B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7D45960FE8E1DFF8B0A4B73A /* AreaPackView.swift */,
 				689F85737FB21B5EF4C1C899 /* AttributionsView.swift */,
 				8FD5B613C0616D9F529C94BA /* BrowserView.swift */,
 				1E8F4508E9962DEE69D54C7E /* CompassView.swift */,
@@ -221,6 +233,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D9B8DA0277CFC6F3056A7C /* AreaPackView.swift in Sources */,
+				F1443C2985143FBFDCE1AF64 /* TilePackLibrary.swift in Sources */,
+				AC49B3CF414CD0C2941DD28F /* TilePackDownloader.swift in Sources */,
+				DDE76290B0F31EC3C176F6D8 /* TilePack.swift in Sources */,
 				D179A90B31F5967D86B4A00A /* AddressSearch.swift in Sources */,
 				F8FF8B4B650C75053E228B47 /* AttributionsView.swift in Sources */,
 				2565CA647BBC3F0EEB915507 /* BrowserView.swift in Sources */,
