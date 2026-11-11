@@ -1,12 +1,62 @@
 {
   "sourceLanguage": "en",
   "strings": {
+    "171 is a voice call service. You record and play messages by phone, so it needs no data connection.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "171は音声通話のサービスです。電話で伝言を録音・再生するため、データ通信は必要ありません。"
+          }
+        }
+      }
+    },
+    "A tsunami advisory also means get out of the sea and away from the shore.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "津波注意報でも、海から上がって海岸を離れます。"
+          }
+        }
+      }
+    },
+    "A typhoon raises the sea level, and the sea can flood the coast.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "台風で海面が上がり、海水が沿岸に流れ込むことがあります。"
+          }
+        }
+      }
+    },
     "About %@": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "約%@"
+          }
+        }
+      }
+    },
+    "After the last message, press 3 to add your own.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最後の伝言のあと、3を押すと伝言を追加で録音できます。"
+          }
+        }
+      }
+    },
+    "After the tone, speak for up to 30 seconds.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "合図の音のあと、30秒以内で話します。"
           }
         }
       }
@@ -30,6 +80,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "範囲が広すぎます"
+          }
+        }
+      }
+    },
+    "At Alert Level 3, older people and others who need time leave dangerous places. At Alert Level 4, everyone does.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "警戒レベル3で高齢の方など避難に時間がかかる人が、警戒レベル4で全員が、危険な場所から避難します。"
           }
         }
       }
@@ -70,6 +130,36 @@
           "stringUnit": {
             "state": "translated",
             "value": "戻る"
+          }
+        }
+      }
+    },
+    "Before you evacuate, switch off the breaker and close the gas valve.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難する前にブレーカーを切り、ガスの元栓を閉めます。"
+          }
+        }
+      }
+    },
+    "Call 171.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "171に電話をかけます。"
+          }
+        }
+      }
+    },
+    "Calls from NTT East and NTT West lines are free. Other carriers set their own call charges.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NTT東日本・NTT西日本の電話からの通話料は無料です。ほかの通信事業者からの通話料は事業者ごとに異なります。"
           }
         }
       }
@@ -120,6 +210,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "消去"
+          }
+        }
+      }
+    },
+    "Coast Guard": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "海上保安庁"
           }
         }
       }
@@ -204,12 +304,72 @@
         }
       }
     },
+    "Disaster Message Dial": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害用伝言ダイヤル"
+          }
+        }
+      }
+    },
+    "Disaster Message Dial (171)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害用伝言ダイヤル（171）"
+          }
+        }
+      }
+    },
     "Disaster Type": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "災害種別"
+          }
+        }
+      }
+    },
+    "Don't breathe in ash. Wear a dust mask. If ash gets in your eyes, rinse them with water without rubbing.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "火山灰を吸い込まないよう防じんマスクを着けます。目に入ったら、こすらずに水で洗い流します。"
+          }
+        }
+      }
+    },
+    "Don't go back once you're out.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "一度避難したら戻らないでください。"
+          }
+        }
+      }
+    },
+    "Don't rush outside. When the shaking stops, put out any flames and open a door to keep an exit.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "あわてて外に出ないでください。揺れが収まったら火を消し、ドアを開けて出口を確保します。"
+          }
+        }
+      }
+    },
+    "Don't wait for Alert Level 5. It means a disaster has started or is about to.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "警戒レベル5を待たないでください。災害がすでに発生しているか、切迫している状況です。"
           }
         }
       }
@@ -304,12 +464,32 @@
         }
       }
     },
+    "Emergency Numbers": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "緊急通報"
+          }
+        }
+      }
+    },
     "Emergency evacuation sites are where you flee to protect your life from immediate danger, and are designated per disaster type. Designated shelters are temporary places to stay until the danger has passed. In a disaster, go to an emergency evacuation site for that disaster, not a designated shelter.": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "「指定緊急避難場所」は災害の危険から命を守るために緊急的に避難する場所で、災害種別ごとに指定されています。「指定避難所」は災害の危険がなくなるまでの一時的な避難施設です。災害発生時には、指定避難所ではなく、その災害に対応している指定緊急避難場所へ避難してください。"
+          }
+        }
+      }
+    },
+    "Enter the phone number of the person in the disaster area. Landline numbers need the area code. If you are in the area, you can use your own number.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "被災地にいる人の電話番号を入力します。固定電話は市外局番から入力します。自分が被災地にいる場合は、自分の番号も使えます。"
           }
         }
       }
@@ -340,6 +520,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "安否確認・支援"
+          }
+        }
+      }
+    },
+    "Fire and Ambulance": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "消防・救急"
           }
         }
       }
@@ -494,6 +684,76 @@
         }
       }
     },
+    "If a large fire threatens your area, call out to people nearby and go to an emergency evacuation site for large fires.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大規模な火災の危険が迫ったら、周りに声をかけ、大規模な火事に対応した指定緊急避難場所へ避難します。"
+          }
+        }
+      }
+    },
+    "If going outside is already dangerous, move to an upper floor or the safest place close by.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "外に出るのがすでに危険なときは、上の階など、近くの少しでも安全な場所へ移動します。"
+          }
+        }
+      }
+    },
+    "If it erupts while you're on the mountain, descend at once, or shelter in a hut or behind a rock.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "登山中に噴火したら、すぐに下山するか、避難小屋や岩陰に隠れます。"
+          }
+        }
+      }
+    },
+    "If you can't leave, go to the highest floor, on the side away from the slope.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難できないときは、斜面と反対側の、できるだけ上の階へ移動します。"
+          }
+        }
+      }
+    },
+    "In a lift, stop at the nearest floor and get off.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エレベーターでは、最寄りの階で止めて降ります。"
+          }
+        }
+      }
+    },
+    "In a sediment disaster warning zone, leave by Alert Level 4.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "土砂災害警戒区域では、警戒レベル4までに避難します。"
+          }
+        }
+      }
+    },
+    "In smoke, cover your mouth and nose with a cloth and stay low.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "煙の中では、布で口と鼻を覆い、姿勢を低くします。"
+          }
+        }
+      }
+    },
     "Inland Flood": {
       "localizations": {
         "ja": {
@@ -530,6 +790,26 @@
           "stringUnit": {
             "state": "translated",
             "value": "浸水"
+          }
+        }
+      }
+    },
+    "It also uses a phone number as the key. Messages left on 171 can be checked on web171, and the other way round.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "web171も電話番号をキーにします。171の伝言はweb171で、web171の伝言は171で確認できます。"
+          }
+        }
+      }
+    },
+    "It opens when a disaster makes calls to the area hard to connect.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害で被災地への電話がつながりにくくなったときに提供されます。"
           }
         }
       }
@@ -597,6 +877,16 @@
         }
       }
     },
+    "Keep away from swollen rivers, flooded roads and underpasses.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "増水した川、冠水した道路やアンダーパスには近づかないでください。"
+          }
+        }
+      }
+    },
     "Kyoshin Monitor (NIED)": {
       "localizations": {
         "ja": {
@@ -613,6 +903,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "九州"
+          }
+        }
+      }
+    },
+    "Landslide": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "土砂災害"
           }
         }
       }
@@ -717,6 +1017,16 @@
         }
       }
     },
+    "Messages play from the newest. Press 8 to repeat one, or 9 for the next.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新しい伝言から再生されます。8で繰り返し、9で次の伝言に進みます。"
+          }
+        }
+      }
+    },
     "Ministry of Health, Labour and Welfare": {
       "localizations": {
         "ja": {
@@ -797,12 +1107,32 @@
         }
       }
     },
+    "NTT sets the limits for each disaster, with at most 20 messages per phone number. Messages are kept until the service closes.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "条件は災害ごとにNTTが決めます。伝言は電話番号1件につき最大20件で、提供が終了するまで保存されます。"
+          }
+        }
+      }
+    },
     "National Land Numerical Information Terms": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "国土数値情報 利用規約"
+          }
+        }
+      }
+    },
+    "Near the coast or a river, after strong shaking or weak shaking that lasts a long time, go at once to the highest place you can reach. Don't wait for a warning.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "海岸や川の近くで強い揺れ、または弱くても長い揺れを感じたら、警報を待たずに、できるだけ高い場所へすぐ避難します。"
           }
         }
       }
@@ -847,6 +1177,16 @@
         }
       }
     },
+    "Notes": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "補足"
+          }
+        }
+      }
+    },
     "Notice": {
       "localizations": {
         "ja": {
@@ -883,6 +1223,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "オフラインデータ"
+          }
+        }
+      }
+    },
+    "Offline Guides": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインガイド"
           }
         }
       }
@@ -937,12 +1287,82 @@
         }
       }
     },
+    "Outdoors, move away from block walls, vending machines and buildings that can drop glass.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "屋外では、ブロック塀、自動販売機、ガラスが落ちてくる建物から離れます。"
+          }
+        }
+      }
+    },
+    "Play Messages": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "伝言を再生する"
+          }
+        }
+      }
+    },
+    "Police": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "警察"
+          }
+        }
+      }
+    },
     "Power Outages": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "停電情報"
+          }
+        }
+      }
+    },
+    "Press 1 to record.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "録音するには1を押します。"
+          }
+        }
+      }
+    },
+    "Press 1. On a rotary phone, wait instead.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "1を押します。ダイヤル式の電話機では、押さずに待ちます。"
+          }
+        }
+      }
+    },
+    "Press 2 to play.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再生するには2を押します。"
+          }
+        }
+      }
+    },
+    "Press 9 to finish, or hang up. After 9 your message plays back, and 8 lets you record it again.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "9を押すか、電話を切って終了します。9のあとに伝言が再生され、8を押すと録音し直せます。"
           }
         }
       }
@@ -987,6 +1407,16 @@
         }
       }
     },
+    "Protect your head, move away from large furniture and get under a sturdy table.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "頭を守り、大きな家具から離れて、丈夫な机の下などに入ります。"
+          }
+        }
+      }
+    },
     "Radiation Monitoring": {
       "localizations": {
         "ja": {
@@ -1003,6 +1433,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "宅地建物取引業者が重要事項説明をする際にご利用いただけません。"
+          }
+        }
+      }
+    },
+    "Record a Message": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "伝言を録音する"
           }
         }
       }
@@ -1053,6 +1493,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "保存済みデータ"
+          }
+        }
+      }
+    },
+    "Say where you are and what happened.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "場所と状況を伝えてください。"
           }
         }
       }
@@ -1147,6 +1597,16 @@
         }
       }
     },
+    "Stay away until every warning and advisory is lifted.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "警報や注意報がすべて解除されるまで戻らないでください。"
+          }
+        }
+      }
+    },
     "Steep Slope Failure (Warning Zone)": {
       "localizations": {
         "ja": {
@@ -1197,6 +1657,26 @@
         }
       }
     },
+    "Storm surge can also happen when it isn't high tide.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "満潮の時刻でなくても高潮は起こります。"
+          }
+        }
+      }
+    },
+    "Storm surge information uses the same alert levels. Leave early, and by Alert Level 4 at the latest.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高潮の情報も同じ警戒レベルで発表されます。早めに、遅くとも警戒レベル4までに避難します。"
+          }
+        }
+      }
+    },
     "Terms of Use (GSI)": {
       "localizations": {
         "ja": {
@@ -1233,6 +1713,16 @@
           "stringUnit": {
             "state": "translated",
             "value": "本データは、災害対策基本法第49条の4・第49条の7に基づき市町村長が指定した指定緊急避難場所・指定避難所の情報を各市町村に登録いただいたものです。なお、最新でない場合や未掲載の場合があるため、最新かつ詳細の状況などは必ず当該市町村にご確認ください。"
+          }
+        }
+      }
+    },
+    "To use a PIN, press 3 to record or 4 to play.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "暗証番号を使うときは、録音は3、再生は4を押します。"
           }
         }
       }
@@ -1287,6 +1777,16 @@
         }
       }
     },
+    "Volcanic Alert Levels: 1 be aware the volcano is active, 2 keep away from the crater, 3 keep off the mountain, 4 older people evacuate, 5 evacuate.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "噴火警戒レベル：1 活火山であることに留意、2 火口周辺規制、3 入山規制、4 高齢者等避難、5 避難。"
+          }
+        }
+      }
+    },
     "Volcanic Event": {
       "localizations": {
         "ja": {
@@ -1297,12 +1797,32 @@
         }
       }
     },
+    "Warning signs: cracks in a slope or the ground, small stones falling, rumbling from the hillside, muddy river or well water, and a river that drops while rain continues.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前ぶれ：がけや地面のひび割れ、小石の落下、山鳴りや地鳴り、川や井戸の水のにごり、雨が続いているのに下がる川の水位。"
+          }
+        }
+      }
+    },
     "Warnings and Monitoring": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "警報・観測"
+          }
+        }
+      }
+    },
+    "Waves arrive more than once, and later waves can be higher.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "津波は繰り返し来ます。後の波のほうが高いこともあります。"
           }
         }
       }
@@ -1327,12 +1847,42 @@
         }
       }
     },
+    "What to Do in a Disaster": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害時の行動"
+          }
+        }
+      }
+    },
+    "Where to Evacuate": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難先"
+          }
+        }
+      }
+    },
     "Yahoo! Weather and Disaster": {
       "localizations": {
         "ja": {
           "stringUnit": {
             "state": "translated",
             "value": "Yahoo!天気・災害"
+          }
+        }
+      }
+    },
+    "web171 is the text version, at www.web171.jp. It needs an internet connection.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "web171は文字で伝言を残す伝言板で、www.web171.jpで利用できます。インターネット接続が必要です。"
           }
         }
       }
