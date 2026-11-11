@@ -83,7 +83,11 @@ struct SheetView: View {
                             .focused($isSearching)
                             .submitLabel(.search)
                             .onSubmit {
-                                if let first = search.results.first { select(first) }
+                                if search.isOffline {
+                                    if let first = search.savedResults.first { select(first) }
+                                } else if let first = search.results.first {
+                                    select(first)
+                                }
                             }
                             .autocorrectionDisabled()
                         if !search.query.isEmpty {
@@ -153,22 +157,40 @@ struct SheetView: View {
         .listRowSeparator(.hidden)
     }
 
-    private var searchResults: some View {
-        ForEach(search.results, id: \.self) { completion in
-            Button {
-                select(completion)
-            } label: {
-                VStack(alignment: .leading) {
-                    Text(completion.title)
-                    if !completion.subtitle.isEmpty {
-                        Text(completion.subtitle)
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
+    @ViewBuilder private var searchResults: some View {
+        if !search.isOffline {
+            ForEach(search.results, id: \.self) { completion in
+                resultButton(title: completion.title, subtitle: completion.subtitle) {
+                    select(completion)
+                }
+            }
+        } else if search.hasSavedData {
+            Section("Saved Data") {
+                // The data can list the same place twice, so rows are told apart by position.
+                ForEach(Array(search.savedResults.enumerated()), id: \.offset) { _, site in
+                    resultButton(title: site.name, subtitle: site.address) {
+                        select(site)
                     }
                 }
             }
-            .tint(.primary)
+        } else {
+            Text("Download the data to use it offline.")
+                .foregroundStyle(.secondary)
         }
+    }
+
+    private func resultButton(title: String, subtitle: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading) {
+                Text(title)
+                if !subtitle.isEmpty {
+                    Text(subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+            }
+        }
+        .tint(.primary)
     }
 
     private func isEnabled(_ layer: HazardLayer) -> Binding<Bool> {
@@ -198,13 +220,21 @@ struct SheetView: View {
     private func select(_ completion: MKLocalSearchCompletion) {
         Task {
             guard let place = await search.place(for: completion) else { return }
-            model.place = place
-            search.query = ""
-            // Clearing the query rebuilds the list, which leaves focus state stale.
-            UIApplication.shared.sendAction(
-                #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
-            detent = ContentView.compactDetent
+            show(place)
         }
+    }
+
+    private func select(_ site: Shelter) {
+        show(Place(title: site.name, latitude: site.latitude, longitude: site.longitude))
+    }
+
+    private func show(_ place: Place) {
+        model.place = place
+        search.query = ""
+        // Clearing the query rebuilds the list, which leaves focus state stale.
+        UIApplication.shared.sendAction(
+            #selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+        detent = ContentView.compactDetent
     }
 }
 
