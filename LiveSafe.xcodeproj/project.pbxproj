@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DAF58220C352B45DF464FE1 /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 6FEC3116604CCA9D5D79302C /* AppIcon.icon */; };
 		2565CA647BBC3F0EEB915507 /* BrowserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FD5B613C0616D9F529C94BA /* BrowserView.swift */; };
 		28172FDEC9E78E7D510D0F68 /* ResourcesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE1DAFA8E7784088AA0EE3E /* ResourcesView.swift */; };
 		397DFF4E38BB06375CA87F1E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 88F9CCBCBA4B073D193AA1B8 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		4F7B5B33CFCEE28E70476F84 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		60EE11111FC0BF14729B64D5 /* ShelterStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShelterStore.swift; sourceTree = "<group>"; };
 		689F85737FB21B5EF4C1C899 /* AttributionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributionsView.swift; sourceTree = "<group>"; };
+		6FEC3116604CCA9D5D79302C /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		7A08A67626F962A7D9939F06 /* LiveSafe.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = LiveSafe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87558C6F57BA55658020ED92 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		88F9CCBCBA4B073D193AA1B8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 		EEAC86F20A8DA5F749C66628 /* LiveSafe */ = {
 			isa = PBXGroup;
 			children = (
+				6FEC3116604CCA9D5D79302C /* AppIcon.icon */,
 				88F9CCBCBA4B073D193AA1B8 /* Assets.xcassets */,
 				87558C6F57BA55658020ED92 /* ContentView.swift */,
 				05FD54C89A557CEC736EE2AD /* Info.plist */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DAF58220C352B45DF464FE1 /* AppIcon.icon in Resources */,
 				397DFF4E38BB06375CA87F1E /* Assets.xcassets in Resources */,
 				E9E75D9515AF31C168381C5F /* InfoPlist.xcstrings in Resources */,
 				911DB3A531ADB61419CB0E0A /* Localizable.xcstrings in Resources */,

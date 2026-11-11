@@ -1,0 +1,131 @@
+{
+  "fill": {
+    "linear-gradient": [
+      "display-p3:1.00000,0.42000,0.22000,1.00000",
+      "display-p3:0.78000,0.12000,0.02000,1.00000"
+    ],
+    "orientation": {
+      "start": {
+        "x": 0.5,
+        "y": 0
+      },
+      "stop": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  },
+  "fill-specializations": [
+    {
+      "appearance": "dark",
+      "value": {
+        "linear-gradient": [
+          "display-p3:0.24000,0.09000,0.07000,1.00000",
+          "display-p3:0.09000,0.03000,0.03000,1.00000"
+        ],
+        "orientation": {
+          "start": {
+            "x": 0.5,
+            "y": 0
+          },
+          "stop": {
+            "x": 0.5,
+            "y": 1
+          }
+        }
+      }
+    }
+  ],
+  "groups": [
+    {
+      "layers": [
+        {
+          "image-name": "runner.svg",
+          "name": "Runner"
+        },
+        {
+          "image-name": "runner-outline.svg",
+          "name": "Outline",
+          "fill-specializations": [
+            {
+              "appearance": "dark",
+              "value": {
+                "solid": "display-p3:1.00000,1.00000,1.00000,1.00000"
+              }
+            }
+          ]
+        }
+      ],
+      "lighting": "individual",
+      "name": "Evacuee",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.6
+      },
+      "specular": true,
+      "translucency": {
+        "enabled": true,
+        "value": 0.5
+      },
+      "position": {
+        "scale": 1.1,
+        "translation-in-points": [
+          0,
+          0
+        ]
+      },
+      "blur-material": 0.6
+    },
+    {
+      "blur-material": 0.5,
+      "layers": [
+        {
+          "image-name": "fold.svg",
+          "name": "Fold",
+          "opacity": 0.1,
+          "glass": false
+        },
+        {
+          "image-name": "terrain.svg",
+          "name": "Terrain",
+          "glass": false
+        },
+        {
+          "image-name": "map.svg",
+          "name": "Map",
+          "fill-specializations": [
+            {
+              "appearance": "dark",
+              "value": {
+                "solid": "display-p3:0.96000,0.93000,0.92000,1.00000"
+              }
+            }
+          ]
+        }
+      ],
+      "lighting": "individual",
+      "name": "Map",
+      "shadow": {
+        "kind": "neutral",
+        "opacity": 0.5
+      },
+      "specular": true,
+      "translucency": {
+        "enabled": true,
+        "value": 0.25
+      },
+      "position": {
+        "scale": 1.1,
+        "translation-in-points": [
+          0,
+          0
+        ]
+      }
+    }
+  ],
+  "supported-platforms": {
+    "squares": [
+      "iOS"
+    ]
+  }
+}

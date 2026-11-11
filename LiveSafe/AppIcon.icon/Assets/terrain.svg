@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <mask id="sheet" maskUnits="userSpaceOnUse" x="0" y="0" width="1024" height="1024"><path d="M222 304 L416 240 L608 304 L802 240 V720 L608 784 L416 720 L222 784 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="48" stroke-linejoin="round"/></mask>
+    <clipPath id="p0"><rect x="150" y="0" width="266" height="1024"/></clipPath><clipPath id="p1"><rect x="416" y="0" width="192" height="1024"/></clipPath><clipPath id="p2"><rect x="608" y="0" width="272" height="1024"/></clipPath>
+  </defs>
+  <g mask="url(#sheet)">
+    <g clip-path="url(#p0)">
+      <g transform="matrix(1 -0.32990 0 1 0 137.237)">
+      <rect x="150" y="100" width="730" height="800" fill="#F3EFE6"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFF2A0" stroke-width="300"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFD29A" stroke-width="205"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFA3A8" stroke-width="118"/>
+        <g stroke="#5B4A3A" stroke-opacity="0.16" stroke-width="12">
+          <path d="M150 330 H880"/><path d="M150 470 H880"/><path d="M150 590 H880"/>
+          <path d="M300 100 V900"/><path d="M470 100 V900"/><path d="M560 100 V900"/><path d="M720 100 V900"/>
+        </g>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#63B4F0" stroke-width="42"/>
+      </g>
+      </g>
+    </g>
+    <g clip-path="url(#p1)">
+      <g transform="matrix(1 0.33333 0 1 0 -138.667)">
+      <rect x="150" y="100" width="730" height="800" fill="#F3EFE6"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFF2A0" stroke-width="300"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFD29A" stroke-width="205"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFA3A8" stroke-width="118"/>
+        <g stroke="#5B4A3A" stroke-opacity="0.16" stroke-width="12">
+          <path d="M150 330 H880"/><path d="M150 470 H880"/><path d="M150 590 H880"/>
+          <path d="M300 100 V900"/><path d="M470 100 V900"/><path d="M560 100 V900"/><path d="M720 100 V900"/>
+        </g>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#63B4F0" stroke-width="42"/>
+      </g>
+      </g>
+    </g>
+    <g clip-path="url(#p2)">
+      <g transform="matrix(1 -0.32990 0 1 0 264.577)">
+      <rect x="150" y="100" width="730" height="800" fill="#F3EFE6"/>
+      <g fill="none" stroke-linecap="round">
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFF2A0" stroke-width="300"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFD29A" stroke-width="205"/>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#FFA3A8" stroke-width="118"/>
+        <g stroke="#5B4A3A" stroke-opacity="0.16" stroke-width="12">
+          <path d="M150 330 H880"/><path d="M150 470 H880"/><path d="M150 590 H880"/>
+          <path d="M300 100 V900"/><path d="M470 100 V900"/><path d="M560 100 V900"/><path d="M720 100 V900"/>
+        </g>
+        <path d="M140 790 C300 740 400 600 510 520 S700 330 890 250" stroke="#63B4F0" stroke-width="42"/>
+      </g>
+      </g>
+    </g>
+  </g>
+</svg>
