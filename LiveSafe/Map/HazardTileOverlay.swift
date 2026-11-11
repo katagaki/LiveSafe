@@ -66,7 +66,10 @@ enum TileImage {
 
     /// Redraws a tile, optionally enlarging a sub-rectangle (top-left origin, in pixels)
     /// to fill it and dimming its colours for dark mode. Transparency is preserved.
-    static func render(_ data: Data, crop: CGRect?, darken: Bool) -> Data? {
+    /// Hazard tiles keep hard pixel edges when enlarged; a basemap with text asks for smoothing.
+    static func render(
+        _ data: Data, crop: CGRect?, darken: Bool, interpolation: CGInterpolationQuality = .none
+    ) -> Data? {
         guard let imageSource = CGImageSourceCreateWithData(data as CFData, nil),
               var image = CGImageSourceCreateImageAtIndex(imageSource, 0, nil),
               let context = makeContext() else { return nil }
@@ -77,7 +80,7 @@ enum TileImage {
             image = cropped
         }
         let bounds = CGRect(x: 0, y: 0, width: size, height: size)
-        context.interpolationQuality = .none
+        context.interpolationQuality = interpolation
         context.draw(image, in: bounds)
         if darken {
             context.setBlendMode(.sourceAtop)
