@@ -1,0 +1,1238 @@
+{
+  "sourceLanguage": "en",
+  "strings": {
+    "All": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すべて"
+          }
+        }
+      }
+    },
+    "Apple Maps": {
+      "shouldTranslate": false
+    },
+    "Attributions": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "出典"
+          }
+        }
+      }
+    },
+    "Avalanche": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "雪崩危険箇所"
+          }
+        }
+      }
+    },
+    "Avalanche (Hazard Site)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "雪崩（危険箇所）"
+          }
+        }
+      }
+    },
+    "Back": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "戻る"
+          }
+        }
+      }
+    },
+    "Check the hazard map made by your municipality for the latest and most detailed information.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新かつ詳細な情報については各市町村が作成するハザードマップをご確認ください。"
+          }
+        }
+      }
+    },
+    "Chubu": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中部"
+          }
+        }
+      }
+    },
+    "Chugoku": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中国"
+          }
+        }
+      }
+    },
+    "Clear": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "消去"
+          }
+        }
+      }
+    },
+    "Current Location": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在地"
+          }
+        }
+      }
+    },
+    "Data Download Site": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "データダウンロードサイト"
+          }
+        }
+      }
+    },
+    "Data Sources": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "データの作成者"
+          }
+        }
+      }
+    },
+    "Debris Flow (Warning Zone)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "土石流（土砂災害警戒区域）"
+          }
+        }
+      }
+    },
+    "Designated Shelter": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指定避難所"
+          }
+        }
+      }
+    },
+    "Disaster Management Agency": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "防災庁"
+          }
+        }
+      }
+    },
+    "Disaster Message Board (web171)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害用伝言板（web171）"
+          }
+        }
+      }
+    },
+    "Disaster Type": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "災害種別"
+          }
+        }
+      }
+    },
+    "Download": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロード"
+          }
+        }
+      }
+    },
+    "Download Failed": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロードに失敗しました"
+          }
+        }
+      }
+    },
+    "Download the data to use it offline.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインで使うにはデータをダウンロードしてください。"
+          }
+        }
+      }
+    },
+    "Downloaded": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロード日"
+          }
+        }
+      }
+    },
+    "Downloaded %@": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@にダウンロード"
+          }
+        }
+      }
+    },
+    "Earth science and disaster research institute": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "防災科学技術研究所"
+          }
+        }
+      }
+    },
+    "Earthquake": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地震"
+          }
+        }
+      }
+    },
+    "Emergency Evacuation Site": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指定緊急避難場所"
+          }
+        }
+      }
+    },
+    "Emergency evacuation sites are where you flee to protect your life from immediate danger, and are designated per disaster type. Designated shelters are temporary places to stay until the danger has passed. In a disaster, go to an emergency evacuation site for that disaster, not a designated shelter.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「指定緊急避難場所」は災害の危険から命を守るために緊急的に避難する場所で、災害種別ごとに指定されています。「指定避難所」は災害の危険がなくなるまでの一時的な避難施設です。災害発生時には、指定避難所ではなく、その災害に対応している指定緊急避難場所へ避難してください。"
+          }
+        }
+      }
+    },
+    "Evacuation Sites": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "指定緊急避難場所"
+          }
+        }
+      }
+    },
+    "Evacuation Sites (Emergency)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難場所（指定緊急避難場所）"
+          }
+        }
+      }
+    },
+    "Family and Relief": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "安否確認・支援"
+          }
+        }
+      }
+    },
+    "Fire and Disaster Management Agency": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "消防庁"
+          }
+        }
+      }
+    },
+    "Flood": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "洪水"
+          }
+        }
+      }
+    },
+    "Flood Depth (Maximum Scale)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "洪水浸水想定（想定最大規模）"
+          }
+        }
+      }
+    },
+    "Flood Depth (Planned Scale)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "洪水浸水想定（計画規模）"
+          }
+        }
+      }
+    },
+    "Flood Duration (Maximum Scale)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "浸水継続時間（想定最大規模）"
+          }
+        }
+      }
+    },
+    "Forward": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "進む"
+          }
+        }
+      }
+    },
+    "GSI Maps": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地理院地図"
+          }
+        }
+      }
+    },
+    "GSI Tile List": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地理院タイル一覧"
+          }
+        }
+      }
+    },
+    "Government": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "政府"
+          }
+        }
+      }
+    },
+    "Hazard Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハザード情報"
+          }
+        }
+      }
+    },
+    "Hazard Map Portal": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ハザードマップポータルサイト"
+          }
+        }
+      }
+    },
+    "Hokkaido": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "北海道"
+          }
+        }
+      }
+    },
+    "Hokuriku": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "北陸"
+          }
+        }
+      }
+    },
+    "House Collapse (Bank Erosion)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "家屋倒壊等（河岸侵食）"
+          }
+        }
+      }
+    },
+    "House Collapse (Overflow)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "家屋倒壊等（氾濫流）"
+          }
+        }
+      }
+    },
+    "Inland Flood": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内水氾濫"
+          }
+        }
+      }
+    },
+    "Inland Flooding": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内水（雨水出水）浸水想定区域"
+          }
+        }
+      }
+    },
+    "Inland Flooding (Stormwater)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内水浸水想定（雨水出水）"
+          }
+        }
+      }
+    },
+    "Inundation": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "浸水"
+          }
+        }
+      }
+    },
+    "JARTIC Road Traffic": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "JARTIC 道路交通情報"
+          }
+        }
+      }
+    },
+    "JMA Disaster Information": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "気象庁 防災情報"
+          }
+        }
+      }
+    },
+    "JMA Earthquake Activity": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "気象庁 地震の活動状況"
+          }
+        }
+      }
+    },
+    "JNTO Safety Tips": {
+      "shouldTranslate": false
+    },
+    "Japanese Red Cross Society": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "日本赤十字社"
+          }
+        }
+      }
+    },
+    "Kansai": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "関西"
+          }
+        }
+      }
+    },
+    "Kanto": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "関東"
+          }
+        }
+      }
+    },
+    "Kyoshin Monitor (NIED)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "強震モニタ（防災科研）"
+          }
+        }
+      }
+    },
+    "Kyushu": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "九州"
+          }
+        }
+      }
+    },
+    "Landslide (Warning Zone)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地すべり（土砂災害警戒区域）"
+          }
+        }
+      }
+    },
+    "Landslide and Avalanche": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "土砂災害・雪崩"
+          }
+        }
+      }
+    },
+    "Large Fire": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "大規模な火事"
+          }
+        }
+      }
+    },
+    "Live Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新データ"
+          }
+        }
+      }
+    },
+    "Locating…": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在地を取得中…"
+          }
+        }
+      }
+    },
+    "Location Access Needed": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "位置情報の許可が必要です"
+          }
+        }
+      }
+    },
+    "MLIT Disaster Information": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "国土交通省 災害・防災情報"
+          }
+        }
+      }
+    },
+    "Map and Search": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図と検索"
+          }
+        }
+      }
+    },
+    "Maps": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "地図"
+          }
+        }
+      }
+    },
+    "Ministry of Health, Labour and Welfare": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "厚生労働省"
+          }
+        }
+      }
+    },
+    "N": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "北"
+          }
+        }
+      }
+    },
+    "NEXCO Central": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEXCO中日本"
+          }
+        }
+      }
+    },
+    "NEXCO East": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEXCO東日本"
+          }
+        }
+      }
+    },
+    "NEXCO West": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NEXCO西日本"
+          }
+        }
+      }
+    },
+    "NHK WORLD-JAPAN News": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NHK WORLD-JAPAN ニュース"
+          }
+        }
+      }
+    },
+    "NHK Weather and Disaster": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "NHK 天気防災"
+          }
+        }
+      }
+    },
+    "NIED": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "防災科研"
+          }
+        }
+      }
+    },
+    "National Land Numerical Information Terms": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "国土数値情報 利用規約"
+          }
+        }
+      }
+    },
+    "Nearest Evacuation Sites": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "近くの避難場所"
+          }
+        }
+      }
+    },
+    "News and Visitors": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ニュース・訪日客向け"
+          }
+        }
+      }
+    },
+    "No Evacuation Site Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難場所データがありません"
+          }
+        }
+      }
+    },
+    "Not Downloaded": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未ダウンロード"
+          }
+        }
+      }
+    },
+    "Notice": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ご注意"
+          }
+        }
+      }
+    },
+    "Nuclear Regulation Authority": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "原子力規制委員会"
+          }
+        }
+      }
+    },
+    "Nuclear and Health": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "原子力・保健"
+          }
+        }
+      }
+    },
+    "Offline Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オフラインデータ"
+          }
+        }
+      }
+    },
+    "Okinawa": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "沖縄"
+          }
+        }
+      }
+    },
+    "Open Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "オープンデータ"
+          }
+        }
+      }
+    },
+    "Open Settings": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "設定を開く"
+          }
+        }
+      }
+    },
+    "Open in Safari": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Safariで開く"
+          }
+        }
+      }
+    },
+    "Power Outages": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "停電情報"
+          }
+        }
+      }
+    },
+    "Prime Minister's Office Disaster Guide": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "首相官邸 防災の手引き"
+          }
+        }
+      }
+    },
+    "Processed from 「ハザードマップポータルサイト」: darkened in dark mode and enlarged past zoom level 17. Not produced by the government.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「ハザードマップポータルサイト」を加工して作成（ダークモードでの減光、ズームレベル17を超える拡大）。国が作成したものではありません。"
+          }
+        }
+      }
+    },
+    "Processed from 「指定緊急避難場所・指定避難所データ」（国土地理院）: shown as pins with LiveSafe's own icons and as a list sorted by distance. Not produced by the Geospatial Information Authority of Japan.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「指定緊急避難場所・指定避難所データ」（国土地理院）を加工して作成（独自のアイコンによるピン表示、距離順の一覧表示）。国土地理院が作成したものではありません。"
+          }
+        }
+      }
+    },
+    "Radiation Monitoring": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "放射線モニタリング情報"
+          }
+        }
+      }
+    },
+    "Real estate brokers cannot use this data for the explanation of important matters.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "宅地建物取引業者が重要事項説明をする際にご利用いただけません。"
+          }
+        }
+      }
+    },
+    "Reload": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "再読み込み"
+          }
+        }
+      }
+    },
+    "River Disaster Information": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "川の防災情報"
+          }
+        }
+      }
+    },
+    "Roads": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "道路"
+          }
+        }
+      }
+    },
+    "Search Address": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "住所を検索"
+          }
+        }
+      }
+    },
+    "Sediment Disaster Warning Areas": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "土砂災害警戒区域"
+          }
+        }
+      }
+    },
+    "Self-Defense Forces Joint Staff": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "統合幕僚監部"
+          }
+        }
+      }
+    },
+    "Shelter Data": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難場所・避難所情報"
+          }
+        }
+      }
+    },
+    "Shelters": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難場所・避難所"
+          }
+        }
+      }
+    },
+    "Shelters (General)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "避難所（指定避難所）"
+          }
+        }
+      }
+    },
+    "Shelters (Welfare)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "福祉避難所（指定避難所）"
+          }
+        }
+      }
+    },
+    "Shikoku": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "四国"
+          }
+        }
+      }
+    },
+    "Slope Failure, Debris Flow and Landslide": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "崖崩れ、土石流及び地滑り"
+          }
+        }
+      }
+    },
+    "Steep Slope Failure (Warning Zone)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "急傾斜地の崩壊（土砂災害警戒区域）"
+          }
+        }
+      }
+    },
+    "Stop": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "中止"
+          }
+        }
+      }
+    },
+    "Storm Surge": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高潮"
+          }
+        }
+      }
+    },
+    "Storm Surge (Maximum Scale)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高潮浸水想定（想定最大規模）"
+          }
+        }
+      }
+    },
+    "Storm Surge and Tsunami": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "高潮・津波"
+          }
+        }
+      }
+    },
+    "Terms of Use (GSI)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "国土地理院コンテンツ利用規約"
+          }
+        }
+      }
+    },
+    "Terms of Use (PDL1.0)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "利用規約（PDL1.0）"
+          }
+        }
+      }
+    },
+    "This data is updated from time to time.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本データは随時更新されます。"
+          }
+        }
+      }
+    },
+    "This data is what each municipality registered for the sites and shelters its mayor designated under the Basic Act on Disaster Management. It may be out of date or incomplete, so always check the latest details with the municipality.": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "本データは、災害対策基本法第49条の4・第49条の7に基づき市町村長が指定した指定緊急避難場所・指定避難所の情報を各市町村に登録いただいたものです。なお、最新でない場合や未掲載の場合があるため、最新かつ詳細の状況などは必ず当該市町村にご確認ください。"
+          }
+        }
+      }
+    },
+    "Tohoku": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "東北"
+          }
+        }
+      }
+    },
+    "Tsunami": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "津波"
+          }
+        }
+      }
+    },
+    "Tsunami (Inundation Depth)": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "津波浸水想定（浸水深）"
+          }
+        }
+      }
+    },
+    "Update": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
+          }
+        }
+      }
+    },
+    "Useful Resources": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "役立つ情報"
+          }
+        }
+      }
+    },
+    "Volcanic Event": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "火山現象"
+          }
+        }
+      }
+    },
+    "Warnings and Monitoring": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "警報・観測"
+          }
+        }
+      }
+    },
+    "Welfare Shelter": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "福祉避難所（指定避難所）"
+          }
+        }
+      }
+    },
+    "Yahoo! Weather and Disaster": {
+      "localizations": {
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yahoo!天気・災害"
+          }
+        }
+      }
+    },
+    "出典：「ハザードマップポータルサイト」": {
+      "shouldTranslate": false
+    },
+    "出典：国土地理院ウェブサイト": {
+      "shouldTranslate": false
+    }
+  },
+  "version": "1.1"
+}
