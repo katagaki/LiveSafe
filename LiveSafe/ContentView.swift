@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    static let compactDetent = PresentationDetent.fraction(compactFraction)
-    private static let compactFraction: CGFloat = 0.3
+    /// Just tall enough to show the search field.
+    static let compactDetent = PresentationDetent.height(80)
 
     @State private var model = MapModel()
-    @State private var detent = compactDetent
+    @State private var detent = PresentationDetent.medium
     /// Distance from the top of the screen to the top of the sheet, as last measured.
     @State private var sheetTop: CGFloat?
 
@@ -35,6 +35,7 @@ struct ContentView: View {
                 .onGeometryChange(for: CGFloat.self) { $0.frame(in: .global).minY } action: { sheetTop = $0 }
                 .presentationDetents([Self.compactDetent, .medium, .large], selection: $detent)
                 .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                .presentationContentInteraction(.scrolls)
                 .interactiveDismissDisabled()
         }
     }
@@ -44,7 +45,7 @@ struct ContentView: View {
     private func bottomInset(in geometry: GeometryProxy) -> CGFloat {
         let insets = geometry.safeAreaInsets
         let height = geometry.size.height + insets.top + insets.bottom
-        guard let sheetTop else { return height * Self.compactFraction }
+        guard let sheetTop else { return height * 0.5 }
         // The map adds the bottom safe area to this itself.
         return min(height - sheetTop, height * 0.55) - insets.bottom
     }
