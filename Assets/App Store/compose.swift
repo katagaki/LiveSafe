@@ -12,18 +12,18 @@ enum Device: String {
     case iPhone
     case iPad
 
-    /// 6.5" iPhone and 13" iPad.
+    /// 6.3" iPhone, which App Store Connect accepts for its 6.1"/6.3" slot, and 13" iPad.
     var canvasSize: NSSize {
         switch self {
-        case .iPhone: NSSize(width: 1242, height: 2688)
+        case .iPhone: NSSize(width: 1206, height: 2622)
         case .iPad: NSSize(width: 2064, height: 2752)
         }
     }
 
     var isRequested: Bool { requestedDevices.isEmpty || requestedDevices.contains(rawValue) }
 
-    /// Text and margins are laid out for the iPhone canvas and scaled up by width.
-    var scale: CGFloat { canvasSize.width / Device.iPhone.canvasSize.width }
+    /// Text and margins are laid out for a 1242-pixel-wide canvas and scaled by width.
+    var scale: CGFloat { canvasSize.width / 1242 }
 
     func rawDir(_ language: String) -> URL {
         scriptDir.appendingPathComponent("Raw").appendingPathComponent(rawValue)
