@@ -42,6 +42,16 @@
 		96D9B8DA0277CFC6F3056A7C /* AreaPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D45960FE8E1DFF8B0A4B73A /* AreaPackView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		7C9E1A3B5D2F4068B0D2F4A6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD9D628BFC2E1EF3E886CEBA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F76DD562A33EAFFD6DB7A35;
+			remoteInfo = LiveSafe;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		05C994436C32722A5E329E2B /* TileSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileSource.swift; sourceTree = "<group>"; };
 		05FD54C89A557CEC736EE2AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -78,13 +88,23 @@
 		12D0AA163275BD56D5540931 /* TilePackDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePackDownloader.swift; sourceTree = "<group>"; };
 		CEB4FD910ABC12775F91B7F9 /* TilePackLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilePackLibrary.swift; sourceTree = "<group>"; };
 		7D45960FE8E1DFF8B0A4B73A /* AreaPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaPackView.swift; sourceTree = "<group>"; };
+		3C1B5E9A7D2F4086A1E3C5B7 /* LiveSafeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiveSafeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		8A4D2C6E1F3B5079D2E4A6C8 /* LiveSafeUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = LiveSafeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXGroup section */
 		0766FD490A811E59C4733392 = {
 			isa = PBXGroup;
 			children = (
 				EEAC86F20A8DA5F749C66628 /* LiveSafe */,
+				8A4D2C6E1F3B5079D2E4A6C8 /* LiveSafeUITests */,
 				148CB3E881F8A0292C72326E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				7A08A67626F962A7D9939F06 /* LiveSafe.app */,
+				3C1B5E9A7D2F4086A1E3C5B7 /* LiveSafeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -183,6 +204,27 @@
 			productReference = 7A08A67626F962A7D9939F06 /* LiveSafe.app */;
 			productType = "com.apple.product-type.application";
 		};
+		5E2A7C9B3D1F4806B8A2C4E6 /* LiveSafeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4A6C8E0B2D5F7193E1A3C5D7 /* Build configuration list for PBXNativeTarget "LiveSafeUITests" */;
+			buildPhases = (
+				9B3E5A7C1D4F6082C6E8A0B2 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2D6F8A0C4E1B3957A9C1E3F5 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				8A4D2C6E1F3B5079D2E4A6C8 /* LiveSafeUITests */,
+			);
+			name = LiveSafeUITests;
+			packageProductDependencies = (
+			);
+			productName = LiveSafeUITests;
+			productReference = 3C1B5E9A7D2F4086A1E3C5B7 /* LiveSafeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -210,6 +252,7 @@
 			projectRoot = "";
 			targets = (
 				4F76DD562A33EAFFD6DB7A35 /* LiveSafe */,
+				5E2A7C9B3D1F4806B8A2C4E6 /* LiveSafeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -265,7 +308,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B3E5A7C1D4F6082C6E8A0B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2D6F8A0C4E1B3957A9C1E3F5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F76DD562A33EAFFD6DB7A35 /* LiveSafe */;
+			targetProxy = 7C9E1A3B5D2F4068B0D2F4A6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0CACAABA08597A167D65AEAF /* Release */ = {
@@ -443,6 +501,38 @@
 			};
 			name = Debug;
 		};
+		1E3A5C7B9D2F4086C8A0E2B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katagaki.LiveSafe.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiveSafe;
+			};
+			name = Debug;
+		};
+		6F8B0D2A4C1E3957B9D1F3A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.katagaki.LiveSafe.uitests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = LiveSafe;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -460,6 +550,15 @@
 			buildConfigurations = (
 				B79786EA1FFE69DDD34FB22A /* Debug */,
 				5E7701068C8B57B9A2B774E0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4A6C8E0B2D5F7193E1A3C5D7 /* Build configuration list for PBXNativeTarget "LiveSafeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1E3A5C7B9D2F4086C8A0E2B4 /* Debug */,
+				6F8B0D2A4C1E3957B9D1F3A5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
