@@ -48,8 +48,8 @@ boot() {
   xcrun simctl boot $1
   xcrun simctl bootstatus $1 -b >/dev/null
   xcrun simctl status_bar $1 override --time 9:41 \
-    --batteryState discharging --batteryLevel 100 \
-    --cellularMode active --cellularBars 4 --wifiBars 3 --operatorName ""
+    --batteryState discharging --batteryLevel 31 \
+    --dataNetwork 4g --cellularMode active --cellularBars 4 --operatorName ""
 }
 
 # MARK: - Build
