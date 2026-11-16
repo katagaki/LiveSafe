@@ -35,15 +35,11 @@ enum Device: String {
     }
 }
 
-struct Copy {
-    let header: String
-    let caption: String
-}
-
 struct Screenshot {
     let name: String
-    /// Keyed by language code. A language without copy is skipped.
-    let copy: [String: Copy]
+    /// The feature's name as the app shows it, keyed by language code.
+    /// A language without a title is skipped.
+    let title: [String: String]
 }
 
 func color(_ hex: UInt32) -> NSColor {
@@ -62,48 +58,12 @@ let gradientBottom = accent.blended(withFraction: 0.35, of: .black)!
 
 /// The iPhone and iPad show the same screens.
 let screenshots = [
-    Screenshot(
-        name: "01-flood",
-        copy: [
-            "en": Copy(header: "Know your flood risk", caption: "See how deep a flood could reach"),
-            "ja": Copy(header: "浸水の危険を地図で確認", caption: "洪水でどこまで浸かるかひと目で"),
-        ]
-    ),
-    Screenshot(
-        name: "02-layers",
-        copy: [
-            "en": Copy(header: "Every hazard, one map", caption: "Floods, tsunamis, storm surges and landslides"),
-            "ja": Copy(header: "あらゆる災害をひとつの地図に", caption: "洪水・津波・高潮・土砂災害"),
-        ]
-    ),
-    Screenshot(
-        name: "03-compass",
-        copy: [
-            "en": Copy(header: "Find the nearest evacuation site", caption: "A compass points the way"),
-            "ja": Copy(header: "近くの避難場所へ", caption: "コンパスが方向を案内"),
-        ]
-    ),
-    Screenshot(
-        name: "04-offline",
-        copy: [
-            "en": Copy(header: "Ready without a signal", caption: "Save shelters and maps on your device"),
-            "ja": Copy(header: "圏外でも使える", caption: "避難所と地図を端末に保存"),
-        ]
-    ),
-    Screenshot(
-        name: "05-resources",
-        copy: [
-            "en": Copy(header: "Help when it matters", caption: "Emergency numbers and official sources"),
-            "ja": Copy(header: "いざという時の情報も", caption: "緊急通報番号と公的機関の情報"),
-        ]
-    ),
-    Screenshot(
-        name: "06-dark",
-        copy: [
-            "en": Copy(header: "Landslide warning zones", caption: "Clear in Dark Mode too"),
-            "ja": Copy(header: "土砂災害警戒区域も", caption: "ダークモードでも見やすく"),
-        ]
-    ),
+    Screenshot(name: "01-flood", title: ["en": "Hazard Maps", "ja": "ハザードマップ"]),
+    Screenshot(name: "02-layers", title: ["en": "Tsunami", "ja": "津波浸水想定"]),
+    Screenshot(name: "03-compass", title: ["en": "Nearest Evacuation Sites", "ja": "近くの避難場所"]),
+    Screenshot(name: "04-offline", title: ["en": "Offline Data", "ja": "オフラインデータ"]),
+    Screenshot(name: "05-resources", title: ["en": "Useful Resources", "ja": "役立つ情報"]),
+    Screenshot(name: "06-dark", title: ["en": "Landslide and Avalanche", "ja": "土砂災害・雪崩"]),
 ]
 
 // MARK: - Text
@@ -281,7 +241,7 @@ func drawiPad(raw: NSImage, in rect: NSRect) {
 // MARK: - Composition
 
 func compose(_ shot: Screenshot, language: String, device: Device) -> Bool {
-    guard let copy = shot.copy[language] else { return true }
+    guard let title = shot.title[language] else { return true }
     let rawURL = device.rawDir(language).appendingPathComponent("\(shot.name).png")
     guard let raw = NSImage(contentsOf: rawURL) else {
         print("missing raw capture: \(rawURL.path)")
@@ -296,16 +256,10 @@ func compose(_ shot: Screenshot, language: String, device: Device) -> Bool {
     NSGradient(starting: gradientTop, ending: gradientBottom)?
         .draw(in: NSRect(origin: .zero, size: canvasSize), angle: -90)
 
-    // One-line header and caption. AppKit's origin is bottom-left.
+    // The feature's name on one line. AppKit's origin is bottom-left.
     let textWidth = canvasSize.width - 96 * s
-    let header = Line(copy.header, size: 84 * s, weight: .bold, color: .white, maxWidth: textWidth)
-    let caption = Line(
-        copy.caption, size: 44 * s, weight: .medium,
-        color: NSColor.white.withAlphaComponent(0.92), maxWidth: textWidth
-    )
-    let captionGap = 4 * s
-    // From the top of the header's ink to the bottom of the caption's.
-    let inkHeight = header.size.height + captionGap + caption.inkBottom - header.inkTop
+    let header = Line(title, size: 84 * s, weight: .bold, color: .white, maxWidth: textWidth)
+    let inkHeight = header.inkBottom - header.inkTop
 
     let aspect = deviceAspect(device)
     var deviceSize: NSSize
@@ -328,7 +282,7 @@ func compose(_ shot: Screenshot, language: String, device: Device) -> Bool {
         // The iPad is drawn as wide as the margins allow and runs off the bottom of the
         // canvas, leaving a band above it for the text.
         deviceSize = NSSize(width: canvasSize.width - 140 * s, height: (canvasSize.width - 140 * s) / aspect)
-        deviceTop = canvasSize.height - 300 * s
+        deviceTop = canvasSize.height - 240 * s
         deviceBottom = deviceTop - deviceSize.height
     }
 
@@ -336,7 +290,6 @@ func compose(_ shot: Screenshot, language: String, device: Device) -> Bool {
     let inkTop = (canvasSize.height + deviceTop + inkHeight) / 2
     let headerTop = (inkTop + header.inkTop).rounded()
     header.draw(top: headerTop, canvasWidth: canvasSize.width)
-    caption.draw(top: headerTop - header.size.height - captionGap, canvasWidth: canvasSize.width)
 
     let deviceRect = NSRect(
         x: ((canvasSize.width - deviceSize.width) / 2).rounded(),
