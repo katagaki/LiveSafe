@@ -134,9 +134,15 @@ final class AppStoreScreenshots: XCTestCase {
     /// Drags the sheet down by its search field until only the field is left.
     private func collapseSheet() {
         XCTAssertTrue(searchField.waitForExistence(timeout: 5), "missing the search field")
-        let start = searchField.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
-        let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.98))
-        start.press(forDuration: 0.1, thenDragTo: end)
+        let bottom = app.frame.height * 0.8
+        // A drag while the sheet is still settling is sometimes lost, so it is tried again.
+        for _ in 0..<4 where searchField.frame.minY < bottom {
+            let start = searchField.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.5))
+            let end = app.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: 0.98))
+            start.press(forDuration: 0.1, thenDragTo: end)
+            Thread.sleep(forTimeInterval: 1.5)
+        }
+        XCTAssertGreaterThanOrEqual(searchField.frame.minY, bottom, "the sheet never collapsed")
     }
 
     /// Opens a screen from the list in the sheet, then waits for it to be worth showing.
